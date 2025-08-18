@@ -93,16 +93,21 @@ function getWeeklyWeather(data) {
 
 
 //main
-/** Passes the lat and lon from getLatLon to getWeather, then the data from that to getHourlyWeather & weeklyWeather.
- * Logs the results for now.
- */
-async function forecast() {
+
+// Passes the lat and lon from getLatLon to getWeather, then the data from that to getHourlyWeather/weeklyWeather. Logs the results for now.
+async function hourlyForecast() {
     const [lat, lon] = await getLatLon();
     const weatherData = await getWeather(lat, lon);
     const hourlyWeather = getHourlyWeather(weatherData);
-    const weeklyWeather = getWeeklyWeather(weatherData);
     console.log(hourlyWeather);
+}
+
+async function weeklyForecast() {
+    const [lat, lon] = await getLatLon();
+    const weatherData = await getWeather(lat, lon);
+    const weeklyWeather = getWeeklyWeather(weatherData);
     console.log(weeklyWeather);
 }
 //need to call this with event listener for input to search bar
-forecast();
+weeklyForecast();
+hourlyForecast();
