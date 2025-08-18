@@ -20,7 +20,8 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
-<body>
+<!-- Classes on body set to work with mt-auto on footer to ensure it always stays at the bottom of the page -->
+<body class="d-flex flex-column min-vh-100">
     <!-- Header -->
     <header id="header">
         <div class="text-center">
@@ -133,11 +134,10 @@
     </main>
 
     <!-- Footer / contact section -->
-    <footer>
-        
+    <footer id="footer" class="text-center mt-auto">
+        <p>&copy; 2025 Weather App. All rights reserved.</p>
     </footer>
-    <!-- JS Links -->
-     <script src="assets/js/script.js"></script>
+
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
