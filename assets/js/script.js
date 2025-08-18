@@ -5,9 +5,10 @@ let cityName = "Bristol";
 let countryCode = "GB";
 
 
+
 // Geocoding API Call
 /** Returns the lat and lon of a city */
-async function getLatLon() {
+export async function getLatLon() {
   try {
     const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`
     const response = await fetch(geoURL);
