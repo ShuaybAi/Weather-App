@@ -1,3 +1,26 @@
+/* CSS Variables */
+:root {
+    /* --primary-font: 'Inter', sans-serif; */
+    /* --secondary-font: 'Macondo', cursive; */
+    --bg-color: #050d35;
+    --text-color: #ceb992;
+    --secondary-bg-color: #22283d;
+    /* --highlight-color: #416a8e; */
+    /* --highlight-color-light: #7a9fc2; */
+}
+
+#header {
+    background-color: var(--bg-color);
+    /* background-color: var(--secondary-bg-color); */
+    color: var(--text-color);
+    padding: 20px 0;
+}
+
+#footer {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    padding: 1.5rem;
+}
 #map {
     height:50vh;
 }
