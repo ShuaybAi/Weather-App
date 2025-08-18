@@ -31,40 +31,33 @@
     <header id="header">
         <div class="text-center">
             <h1 class="display-3">Here Be Weather</h1>
-            <button type="button" class="btn btn-primary">Use my Location</button>
         </div>
     </header>
 
     <!-- Main element to hold all key sections of the home page. Not part of the grid structure -->
     <main>
-        <!-- Map iframe -->
-        <section class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-8">
-                    <label for="toggle">Toggle heat map</label>
-                    <input type="checkbox" id="toggle" name="toggle">
-                    <div id="map"></div>
-                </div>
-            </div>
-        </section>
 
         <!-- Search bar and buttons -->
         <section class="container">
-            <div class="input-group mb-3">
+            <div class="input-group my-3">
                 <input type="text" class="form-control" placeholder="Enter location" aria-label="Enter location">
                 <button class="btn btn-outline-secondary" type="button">Search</button>
-            </div>
-            <div class="d-flex justify-content-evenly">
-                <button type="button" class="btn btn-primary">Hourly</button>
-                <button type="button" class="btn btn-primary">Daily</button>
+                <button type="button" class="btn btn-primary">Use my Location</button>
             </div>
         </section>
+        <!-- Map iframe -->
+            <section class="container-fluid">
+                    <div id="map"></div>
+                    <button type="button" class="btn btn-primary"id="toggle" name="toggle">Toggle heat map</button>
+            </section>
 
         <!-- Today's Weather section -->
         <section id="weatherToday" class="container section justify-content-center">
             <div class="row">
                 <div class="text-center">
-                    <h2 class="display-6">Today's Weather</h2>
+                    <h2 class="display-6">Today's Weather</h2><button type="button" class="btn btn-primary">Hourly</button>
+                    <button type="button" class="btn btn-primary">Daily</button>
+                    
                 </div>
                 <!-- <div>
                     <div class="card">

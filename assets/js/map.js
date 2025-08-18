@@ -1,4 +1,4 @@
-const checkbox = document.getElementById("toggle");
+const toggle = document.getElementById("toggle");
 const layerId = "weatherLayer"
 
 import { getLatLon } from "./script.js";
@@ -47,23 +47,24 @@ map.on("style.load", () => {
     });
 });
 
-map.on('load', () => {
-  checkbox.addEventListener('change', (e) => {
-    if (!map.getLayer('weatherLayer')) {
-      map.addLayer({
-        id: 'weatherLayer',
-        type: 'raster',
-        source: 'weatherLayer',
-        paint: {
-          'raster-opacity': 0,
-          'raster-opacity-transition': { duration: 500 }
-        }
-      });
-    }
-    map.setPaintProperty(
-      layerId,
-      'raster-opacity',
-      e.target.checked ? 1 : 0
-    );
-  });
+let weatherLayerVisible = false;
+
+toggle.addEventListener('click', () => {
+  if (!map.getLayer('weatherLayer')) {
+    map.addLayer({
+      id: 'weatherLayer',
+      type: 'raster',
+      source: 'weatherLayer',
+      paint: {
+        'raster-opacity': 0,
+        'raster-opacity-transition': { duration: 500 }
+      }
+    });
+  }
+  weatherLayerVisible = !weatherLayerVisible;
+  map.setPaintProperty(
+    layerId,
+    'raster-opacity',
+    weatherLayerVisible ? 1 : 0
+  );
 });
