@@ -1,10 +1,8 @@
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
-//will need get these from site (input from search bar)
+// will need get these from site (input from search bar)
 let cityName = "Bristol";
 let countryCode = "GB";
-
-
 
 // Geocoding API Call
 /** Returns the lat and lon of a city */
@@ -73,7 +71,22 @@ async function forecast() {
   const weatherData = await getWeather(lat, lon);
   const hourlyWeather = getHourlyWeather(weatherData);
   console.log(hourlyWeather);
+  return hourlyWeather;
 }
 
-//need to call this with event listener for input to search bar
-forecast();
+// need to call this with event listener for input to search bar
+document.addEventListener("DOMContentLoaded", function() {
+  const searchButton = document.getElementById("searchButton");
+  searchButton.addEventListener("click", function() {
+    const locationInput = document.getElementById("locationInput");
+    const location = locationInput.value;
+    if (location) {
+      // Split the location into city and country code
+      const [city, country] = location.split(",").map(part => part.trim());
+      cityName = city;
+      countryCode = country;
+      forecastArray = forecast();
+    }
+    
+  });
+});
