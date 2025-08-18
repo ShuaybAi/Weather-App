@@ -23,5 +23,13 @@
 }
 #map {
     height:50vh;
+
+}
+
+#toggle {
+    position: absolute;
+    bottom: 10rem;   
+    left:1rem;
+    z-index: 10; 
 }
 
