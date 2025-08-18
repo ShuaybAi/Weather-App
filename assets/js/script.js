@@ -1,4 +1,4 @@
-const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
+export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
 //will need get these from site (input from search bar)
 let cityName = "Bristol";
