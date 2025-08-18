@@ -1,29 +1,29 @@
-const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
+export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
 //will need get these from site (input from search bar)
 let cityName = "Bristol";
 let countryCode = "GB";
 
 
+
 // Geocoding API Call
 /** Returns the lat and lon of a city */
-async function getLatLon() {
-    try {
-        const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`
-        const response = await fetch(geoURL);
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error('API error response:', errorData);
-            throw new Error('API failed');
-        };
-        const data = await response.json();
-        let cityLat = data[0].lat;
-        let cityLon = data[0].lon;
-        return [cityLat, cityLon];
-    } catch (err) {
-        console.error('Error:', err);
-    }
-
+export async function getLatLon() {
+  try {
+    const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`
+    const response = await fetch(geoURL);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error('API error response:', errorData);
+      throw new Error('API failed');
+    };
+    const data = await response.json();
+    let cityLat = data[0].lat;
+    let cityLon = data[0].lon;
+    return [cityLat, cityLon];
+  } catch (err) {
+    console.error('Error:', err);
+  }
 }
 
 // Weather API Call
