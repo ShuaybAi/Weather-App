@@ -1,13 +1,14 @@
-const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
+export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
 //will need get these from site (input from search bar)
 let cityName = "Bristol";
 let countryCode = "GB";
 
 
+
 // Geocoding API Call
 /** Returns the lat and lon of a city */
-async function getLatLon() {
+export async function getLatLon() {
   try {
     const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`
     const response = await fetch(geoURL);
