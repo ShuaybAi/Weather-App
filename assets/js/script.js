@@ -104,6 +104,5 @@ async function forecast() {
     console.log(hourlyWeather);
     console.log(weeklyWeather);
 }
-
 //need to call this with event listener for input to search bar
 forecast();
