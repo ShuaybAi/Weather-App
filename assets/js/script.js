@@ -168,10 +168,11 @@ document.addEventListener("DOMContentLoaded", function () {
 			let daily = await dailyForecast();
 
 			let todaysWeatherContainer = document.querySelector("#weatherCardContainer");
+            let cardImage = setCardImages(daily[0].weatherId);
 			todaysWeatherContainer.innerHTML = `
       <div>
-        <div class="card">
-          <img class="card-img-top" src="/*Add your image function here Rosie*/" alt="Weather icon">
+        <div class="card hero">
+          <img class="card-img-top" src="${cardImage}" alt="Weather icon">
           <div class="card-body">
             <p>Description: ${daily[0].description}</p>
             <p>Temperature: ${daily[0].temp}°</p>
@@ -190,9 +191,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		if (forecastType === "hourly") {
 			let hourlyWeather = await hourlyForecast();
 			hourlyWeather.forEach((hour) => {
+                let cardImage = setCardImages(hour.weatherId)
 				forecastContainer.innerHTML += `
           <div class="card">
-            <img class="card-img-top" src="/*Add your image function here Rosie*/" alt="Weather icon">
+            <img class="card-img-top" src="${cardImage}" alt="Weather icon">
             <div class="card-body">
               <h5>${hour.time}</h5>
               <p>${hour.description}</p>
@@ -203,9 +205,10 @@ document.addEventListener("DOMContentLoaded", function () {
 		} else {
 			let dailyWeather = await dailyForecast();
 			dailyWeather.forEach((day) => {
+                let cardImage = setCardImages(day.weatherId)
 				forecastContainer.innerHTML += `
           <div class="card">
-            <img class="card-img-top" src="/*Add your image function here Rosie*/" alt="Weather icon">
+            <img class="card-img-top" src="${cardImage}" alt="Weather icon">
             <div class="card-body">
               <h5>${day.date}</h5>
               <p>${day.description}</p>
@@ -217,7 +220,40 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 });
 
-
+//set images for cards
+function setCardImages(weatherId) {
+    const firstNum = weatherId.toString().split("")[0];
+    if (weatherId === 800) {
+        return "assets/images/sunny.webp" //sunny/clear
+    } else if (weatherId > 800 && weatherId < 900) {
+        return "assets/images/sun&cloud.webp"; //cloudy
+    } else {
+        switch (firstNum) {
+        case "2": //thunderstorm
+            return "assets/images/thunderstorm.webp";
+            break;
+        case "3": //drizzle
+            return "assets/images/drizzle.webp";
+            break;
+        case "5": //rain
+            return "assets/images/rain.webp";
+            break;
+        case "6": //snow
+            return "assets/images/snow.webp";
+            break;
+        case "7": //foggy/mist
+            return "assets/images/fog.webp";
+            break;
+        case "9": //extreme
+            return "assets/images/extreme.webp";
+            break;
+        default: 
+            return "assets/images/sunny.webp"
+    }
+   
+    }
+   
+}
 
 
 // geo locate weather function
