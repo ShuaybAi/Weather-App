@@ -1,5 +1,6 @@
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
+import { locate } from "./geolocate.js";
 // will need get these from site (input from search bar)
 let cityName = "Bristol";
 let countryCode = "GB";
@@ -29,7 +30,7 @@ export async function getLatLon() {
 
 // Weather API Call
 /** Returns weather data for 5 days */
-async function getWeather(lat, lon) {
+export async function getWeather(lat, lon) {
   try {
     const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     const response = await fetch(weatherURL);
