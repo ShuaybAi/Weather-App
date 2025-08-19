@@ -1,5 +1,7 @@
+
 const toggle = document.getElementById("toggle");
 const layerId = "weatherLayer"
+let currentMarker = null;
 
 import { getLatLon } from "./script.js";
 import { apiKey } from "./script.js";
@@ -20,19 +22,21 @@ const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 
 
-
+document.addEventListener("DOMContentLoaded", function () {
 async function showLatLon() {
   const coords = await getLatLon();
+  
   map.flyTo({
           center: [coords[1], coords[0]],
           zoom: 12,
           speed: 3,
           curve: 1.2,
         });
+
 }
 
 showLatLon();
-
+})
 
 map.on("style.load", () => {
     map.setFog({});
@@ -68,3 +72,23 @@ toggle.addEventListener('click', () => {
     weatherLayerVisible ? 1 : 0
   );
 });
+
+// use geo-location for map
+export function navigateMap(geoLat, geoLon) {
+  map.flyTo({
+          center: [geoLon, geoLat],
+          zoom: 15,
+          speed: 1,
+          curve: 1.2,
+          pitch:74,
+          bearing:12.8,
+          hash:true
+        });
+  if (currentMarker){
+    currentMarker.remove()
+  }
+  currentMarker = new mapboxgl.Marker()
+    .setLngLat ([geoLon, geoLat])
+    .addTo(map)
+  
+}

@@ -31,20 +31,20 @@ export async function getLatLon() {
 
 // Weather API Call
 /** Returns weather data for 5 days */
-async function getWeather(lat, lon) {
-	try {
-		const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-		const response = await fetch(weatherURL);
-		if (!response.ok) {
-			const errorData = await response.json();
-			console.error("API error response:", errorData);
-			throw new Error("API failed");
-		}
-		const data = await response.json();
-		return data;
-	} catch (err) {
-		console.error("Error:", err);
-	}
+export async function getWeather(lat, lon) {
+  try {
+    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const response = await fetch(weatherURL);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("API error response:", errorData);
+      throw new Error("API failed");
+    }
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error:", err);
+  }
 }
 
 /** Takes today from the 5 day forecast and returns an array of 4 arrays for the time of each forecast,
@@ -121,13 +121,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 	});
 
-	const dailyButton = document.getElementById("dailyButton");
-	dailyButton.addEventListener("click", function () {
-		forecastType = "daily";
-    if (locationSelected) {
+  	const dailyButton = document.getElementById("dailyButton");
+  	dailyButton.addEventListener("click", function () {
+    		forecastType = "daily";
+      if (locationSelected) {
       showForecast();
     }
 	});
+
+    //search with dropdown
+    const searchInput = document.getElementById("locationInput");
+    const dropdown = document.createElement("ul");
+    dropdown.className = "suggestions";
+    searchInput.parentNode.appendChild(dropdown);
+
+    searchInput.addEventListener("input", async function () {
+        const query = searchInput.value.trim();
+        dropdown.innerHTML = ""; // Clear previous suggestions
+        if (query.length < 3) return; // Only search if input is long enough
+
+        const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${encodeURIComponent(query)}&limit=5&appid=${apiKey}`;
+        const response = await fetch(geoURL);
+        if (!response.ok) return;
+        const results = await response.json();
+
+        results.forEach(place => {
+            const listItem = document.createElement("li");
+            listItem.textContent = `${place.name}, ${place.country}`;
+            listItem.addEventListener("click", () => {
+                searchInput.value = `${place.name}, ${place.country}`;
+                dropdown.innerHTML = "";
+            });
+            dropdown.appendChild(listItem);
+        });
+    }
+    );
 
 	const searchButton = document.getElementById("searchButton");
 	searchButton.addEventListener("click", showWeather);
@@ -137,12 +165,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		const location = locationInput.value;
 		if (location) {
       locationSelected = true;
-			// Split the location into city and country code
-			const [city, country] = location
-				.split(",")
-				.map((part) => part.trim());
-			cityName = city;
-			countryCode = country;
 			let daily = await dailyForecast();
 
 			let todaysWeatherContainer = document.querySelector("#weatherCardContainer");
@@ -194,3 +216,18 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	}
 });
+
+
+
+
+// geo locate weather function
+export function geoWeather(geoLat, geoLon) {
+  let hourly = hourlyForecast();
+  let daily = dailyForecast();
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
+  .then(response => response.json())
+    .then(data => {
+      let cityName = data.address.village;
+    })
+}
+
