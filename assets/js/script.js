@@ -29,7 +29,7 @@ export async function getLatLon() {
 
 // Weather API Call
 /** Returns weather data for 5 days */
-async function getWeather(lat, lon) {
+export async function getWeather(lat, lon) {
   try {
     const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
     const response = await fetch(weatherURL);
@@ -134,6 +134,21 @@ document.addEventListener("DOMContentLoaded", function () {
       countryCode = country;
       let hourly = hourlyForecast();
       let daily = dailyForecast();
+      
     }
   });
 });
+
+
+
+
+// geo locate weather function
+export function geoWeather(geoLat, geoLon) {
+  let hourly = hourlyForecast();
+  let daily = dailyForecast();
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
+  .then(response => response.json())
+    .then(data => {
+      let cityName = data.address.village;
+    })
+}
