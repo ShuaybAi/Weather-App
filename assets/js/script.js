@@ -7,6 +7,8 @@ let countryCode = "GB";
 // this will change based on which button (hourly/daily) is pressed
 let forecastType = "hourly";
 
+let locationSelected = false;
+
 // Geocoding API Call
 /** Returns the lat and lon of a city */
 export async function getLatLon() {
@@ -114,11 +116,17 @@ document.addEventListener("DOMContentLoaded", function () {
 	const hourlyButton = document.getElementById("hourlyButton");
 	hourlyButton.addEventListener("click", function () {
 		forecastType = "hourly";
+    if (locationSelected) {
+      showForecast();
+    }
 	});
 
 	const dailyButton = document.getElementById("dailyButton");
 	dailyButton.addEventListener("click", function () {
 		forecastType = "daily";
+    if (locationSelected) {
+      showForecast();
+    }
 	});
 
 	const searchButton = document.getElementById("searchButton");
@@ -128,6 +136,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		const locationInput = document.getElementById("locationInput");
 		const location = locationInput.value;
 		if (location) {
+      locationSelected = true;
 			// Split the location into city and country code
 			const [city, country] = location
 				.split(",")
