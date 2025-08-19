@@ -29,20 +29,20 @@ export async function getLatLon() {
 
 // Weather API Call
 /** Returns weather data for 5 days */
-async function getWeather(lat, lon) {
-    try {
-        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
-        const response = await fetch(weatherURL);
-        if (!response.ok) {
-            const errorData = await response.json();
-            console.error("API error response:", errorData);
-            throw new Error("API failed");
-        }
-        const data = await response.json();
-        return data;
-    } catch (err) {
-        console.error("Error:", err);
+export async function getWeather(lat, lon) {
+  try {
+    const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const response = await fetch(weatherURL);
+    if (!response.ok) {
+      const errorData = await response.json();
+      console.error("API error response:", errorData);
+      throw new Error("API failed");
     }
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.error("Error:", err);
+  }
 }
 
 /** Takes today from the 5 day forecast and returns an array of 4 arrays for the time of each forecast,
@@ -159,4 +159,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+
+
+
+// geo locate weather function
+export function geoWeather(geoLat, geoLon) {
+  let hourly = hourlyForecast();
+  let daily = dailyForecast();
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
+  .then(response => response.json())
+    .then(data => {
+      let cityName = data.address.village;
+    })
+}
 

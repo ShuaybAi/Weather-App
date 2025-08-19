@@ -1,6 +1,8 @@
-
 const locate = document.getElementById("geolocate");
+
 import { navigateMap } from "./map.js";
+import { getWeather } from "./script.js";
+import { geoWeather } from "./script.js";
 
   locate.addEventListener("click", () => {
     if ("geolocation" in navigator) {
@@ -8,7 +10,9 @@ import { navigateMap } from "./map.js";
         (position) => {
           const geoLat = position.coords.latitude;
           const geoLon = position.coords.longitude;
-          navigateMap(geoLat, geoLon)
+          navigateMap(geoLat, geoLon);
+          getWeather(geoLat, geoLon);
+          geoWeather(geoLat, geoLon)
         },
         (error) => {
           output.textContent = `Error: ${error.message}`;
