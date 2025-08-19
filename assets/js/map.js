@@ -24,6 +24,7 @@ map.addControl(new mapboxgl.NavigationControl());
 
 async function showLatLon() {
   const coords = await getLatLon();
+  
   map.flyTo({
           center: [coords[1], coords[0]],
           zoom: 12,
@@ -69,3 +70,13 @@ toggle.addEventListener('click', () => {
     weatherLayerVisible ? 1 : 0
   );
 });
+
+
+export function navigateMap(geoLat, geoLon) {
+  map.flyTo({
+          center: [geoLon, geoLat],
+          zoom: 15,
+          speed: 1,
+          curve: 1.2,
+        });
+}

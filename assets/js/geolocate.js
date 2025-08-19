@@ -1,5 +1,6 @@
 
-  const locate = document.getElementById("geolocate");
+const locate = document.getElementById("geolocate");
+import { navigateMap } from "./map.js";
 
   locate.addEventListener("click", () => {
     if ("geolocation" in navigator) {
@@ -7,7 +8,7 @@
         (position) => {
           const geoLat = position.coords.latitude;
           const geoLon = position.coords.longitude;
-          console.log(geoLat,geoLon)
+          navigateMap(geoLat, geoLon)
         },
         (error) => {
           output.textContent = `Error: ${error.message}`;
