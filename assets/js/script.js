@@ -1,6 +1,5 @@
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
-import { locate } from "./geolocate.js";
 // will need get these from site (input from search bar)
 let cityName = "Bristol";
 let countryCode = "GB";
@@ -135,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
       countryCode = country;
       let hourly = hourlyForecast();
       let daily = dailyForecast();
+      
     }
   });
 });
@@ -143,7 +143,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // geo locate weather function
-export function geoWeather() {
+export function geoWeather(geoLat, geoLon) {
   let hourly = hourlyForecast();
   let daily = dailyForecast();
+  fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
+  .then(response => response.json())
+    .then(data => {
+      let cityName = data.address.village;
+    })
 }

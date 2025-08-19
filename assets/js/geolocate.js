@@ -1,5 +1,4 @@
-
-export const locate = document.getElementById("geolocate");
+const locate = document.getElementById("geolocate");
 
 import { navigateMap } from "./map.js";
 import { getWeather } from "./script.js";
@@ -13,7 +12,7 @@ import { geoWeather } from "./script.js";
           const geoLon = position.coords.longitude;
           navigateMap(geoLat, geoLon);
           getWeather(geoLat, geoLon);
-          geoWeather()
+          geoWeather(geoLat, geoLon)
         },
         (error) => {
           output.textContent = `Error: ${error.message}`;
