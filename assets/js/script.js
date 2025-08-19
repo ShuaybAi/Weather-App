@@ -9,16 +9,7 @@ let forecastType = "hourly";
 
 let locationSelected = false;
 
-// geo locate weather function
-export function geoWeather(geoLat, geoLon) {
-    let hourly = hourlyForecast();
-    let daily = dailyForecast();
-    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
-        .then(response => response.json())
-        .then(data => {
-            let cityName = data.address.village;
-        })
-}
+
 
 //set images for weather cards
 function setCardImages(weatherId) {
