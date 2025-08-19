@@ -196,6 +196,8 @@ document.addEventListener("DOMContentLoaded", function () {
             listItem.textContent = `${place.name}, ${place.country}`;
             listItem.addEventListener("click", () => {
                 searchInput.value = `${place.name}, ${place.country}`;
+                cityName = place.name;
+                countryCode = place.country;
                 dropdown.innerHTML = "";
             });
             dropdown.appendChild(listItem);
