@@ -27,9 +27,9 @@
 }
 
 #toggle {
-    position: absolute;
-    bottom: 10rem;   
-    left:1rem;
+    position: relative;
+    bottom: 2.4rem;   
+    left:0.2rem;
     z-index: 10; 
 }
 

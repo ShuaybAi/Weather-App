@@ -1,3 +1,4 @@
+
 const toggle = document.getElementById("toggle");
 const layerId = "weatherLayer"
 
