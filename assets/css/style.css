@@ -4,14 +4,13 @@
     /* --secondary-font: 'Macondo', cursive; */
     --bg-color: linear-gradient(to right, #050d35, #1a2a6c);
     --text-color: #ffc107;
-    --secondary-bg-color: #22283d;
+    /* --secondary-bg-color: #22283d; */
     /* --highlight-color: #416a8e; */
     /* --highlight-color-light: #7a9fc2; */
 }
 
 #header {
     background: var(--bg-color);
-    /* background-color: var(--secondary-bg-color); */
     color: var(--text-color);
     padding: 20px 0;
 }
@@ -21,9 +20,9 @@
     color: var(--text-color);
     padding: 1.5rem;
 }
+
 #map {
     height:50vh;
-
 }
 
 #toggle {

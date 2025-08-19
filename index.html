@@ -52,20 +52,23 @@
             </section>
 
         <!-- Today's Weather section -->
-        <section id="weatherToday" class="container section justify-content-center">
+        <section id="weatherToday" class="d-flex container justify-content-center">
             <div class="row">
                 <div class="text-center">
                     <h2 class="display-6">Today's Weather</h2>
                     <button id="hourlyButton" type="button" class="btn btn-primary">Hourly</button>
                     <button id="dailyButton" type="button" class="btn btn-primary">Daily</button>
                 </div>
-                <!-- <div>
+                <!-- Today's weather card -->
+                <div id="weatherCardContainer">
+                    <!-- Card will be dynamically generated here -->
+                </div>
+                <!-- <div class="container">
                     <div class="card">
-                        <img class="weatherIcon" class="card-img-top">
+                        <img class="weatherIcon card-img-top" alt="Weather icon">
                         <div class="card-body">
-                            <p class="description"></p>
-                            <p class="highTemp"></p>
-                            <p class="lowTemp"></p>
+                            <p>Description: -</p>
+                            <p>Temperature: -</p>
                         </div>
                     </div>
                 </div> -->
@@ -73,10 +76,14 @@
         </section>
 
         <!-- Forecast Weather section -->
-        <section id="forecast" class="container section">
+        <section id="forecast" class="d-flex container justify-content-center">
             <div class="row">
                 <div class="text-center">
                     <h2 class="display-6">Forecast</h2>
+                </div>
+                <!-- Forecast cards -->
+                <div id="forecastCardsContainer">
+                    <!-- Cards will be dynamically generated here -->
                 </div>
                 <!-- <div>
                     <div class="card">
