@@ -138,3 +138,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+
+
+// geo locate weather function
+export function geoWeather() {
+  let hourly = hourlyForecast();
+  let daily = dailyForecast();
+}
