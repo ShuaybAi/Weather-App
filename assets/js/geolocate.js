@@ -14,8 +14,10 @@ import {} from "./script.js"
           fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
           .then(response => response.json())
         .then(data => {
-            document.getElementById("locationInput").placeholder = `${data.address.village}, GB`;
-            document.getElementById("locationInput").value = data.address.village + ", GB"
+            const address = data.address;
+            const place = address.village || address.town || address.city || address.hamlet || address.county || "Unknown";
+            document.getElementById("locationInput").placeholder = place + ", GB";
+            document.getElementById("locationInput").value = place + ", GB"
             document.getElementById("searchButton").click()
             document.getElementById("locationInput").disabled = true;
             document.getElementById("searchButton").disabled = true;      
