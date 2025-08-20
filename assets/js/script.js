@@ -9,16 +9,7 @@ let forecastType = "hourly";
 
 let locationSelected = false;
 
-// geo locate weather function
-export function geoWeather(geoLat, geoLon) {
-    let hourly = hourlyForecast();
-    let daily = dailyForecast();
-    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
-        .then(response => response.json())
-        .then(data => {
-            let cityName = data.address.village;
-        })
-}
+
 
 //set images for weather cards
 function setCardImages(weatherId) {
@@ -59,7 +50,7 @@ function setCardImages(weatherId) {
 /** Returns the lat and lon of a city */
 export async function getLatLon() {
     try {
-        const geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`;
+        const geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName},${countryCode}&limit=1&appid=${apiKey}`;
         const response = await fetch(geoURL);
         if (!response.ok) {
             const errorData = await response.json();
@@ -79,7 +70,7 @@ export async function getLatLon() {
 /** Returns weather data for 5 days */
 export async function getWeather(lat, lon) {
     try {
-        const weatherURL = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+        const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
         const response = await fetch(weatherURL);
         if (!response.ok) {
             const errorData = await response.json();
