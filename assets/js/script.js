@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
             <div class="card-body">
-              <h3>${time}</h3>
+              <h3 class="h5">${time}</h3>
               <p>${hour.description}</p>
               <p>${hour.temp}°</p>
             </div>
@@ -320,8 +320,8 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
             <div class="card-body">
-              <h3>${dayOfWeek}</h3>
-              <h4>${formattedDate}<h4>
+              <h3 class="h5">${dayOfWeek}</h3>
+              <p>${formattedDate}<p>
               <p>${day.description}</p>
               <p>${day.temp}°</p>
             </div>
