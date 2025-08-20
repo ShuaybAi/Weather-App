@@ -3,7 +3,6 @@ const toggle = document.getElementById("toggle");
 const layerId = "weatherLayer"
 export let currentMarker = null;
 
-import { getLatLon } from "./script.js";
 import { apiKey } from "./script.js";
 
 mapboxgl.accessToken =
