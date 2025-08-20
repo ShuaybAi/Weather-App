@@ -196,6 +196,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //default to previous search location, or london on site load
+    const locationInput = document.getElementById("locationInput");
+    const savedLocation = localStorage.getItem("savedInput");
+    if (savedLocation) {
+        locationInput.value = savedLocation;
+    } else {
+        locationInput.value = "London, GB";
+    }
+    showWeather();
+
     //search with dropdown
     const searchInput = document.getElementById("locationInput");
     const dropdown = document.createElement("ul");
@@ -232,6 +242,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function showWeather() {
         const locationInput = document.getElementById("locationInput");
         const location = locationInput.value;
+        localStorage.setItem("savedInput", location);
         if (location) {
             const [city, country] = location
                 .split(",")
