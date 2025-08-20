@@ -252,10 +252,18 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>`;
 
-            showForecast();
-        }
-    }
+          // add todays weather as a card on the map
+            let todaymap = document.getElementById("tempCard")
+            if (todaymap) {
+              todaymap.classList.remove("inv")
+              todaymap.innerHTML = ""; 
+              let p = document.createElement("p");
+              p.innerText = `${daily[0].temp}°C`;
+              todaymap.appendChild(p);
 
+              showForecast();
+            }
+          }}
     async function showForecast() {
         let forecastContainer = document.querySelector("#forecastCardsContainer");
         forecastContainer.innerHTML = "";
