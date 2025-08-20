@@ -9,7 +9,16 @@ let forecastType = "hourly";
 
 let locationSelected = false;
 
-
+//Show warning if API not responding
+function apiWarning() {
+    const weatherCardDiv = document.querySelector("#weatherCardContainer");
+    weatherCardDiv.innerHTML =
+        `<div class="card">
+            <div class="card-body text-center">
+              <h5>We're sorry, the weather cannot be fetched at the moment. Please try again later.</h5>
+            </div>
+          </div>`
+}
 
 //set images for weather cards
 function setCardImages(weatherId) {
@@ -63,6 +72,7 @@ export async function getLatLon() {
         return [cityLat, cityLon];
     } catch (err) {
         console.error("Error:", err);
+        apiWarning();
     }
 }
 
@@ -81,6 +91,7 @@ export async function getWeather(lat, lon) {
         return data;
     } catch (err) {
         console.error("Error:", err);
+        apiWarning();
     }
 }
 
