@@ -1,5 +1,9 @@
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
+import { map } from "./map.js";
+
+let currentMarker = null
+
 // will need get these from site (input from search bar)
 let cityName = "London";
 let countryCode = "GB";
@@ -88,6 +92,21 @@ export async function getWeather(lat, lon) {
             throw new Error("API failed");
         }
         const data = await response.json();
+        map.flyTo({
+          center: [lon,lat],
+          zoom: 15,
+          speed: 1,
+          curve: 1.2,
+          pitch:74,
+          bearing:12.8,
+          hash:true
+        })
+        if (currentMarker){
+            currentMarker.remove()
+          }
+          currentMarker = new mapboxgl.Marker()
+            .setLngLat ([lon, lat])
+            .addTo(map)
         return data;
     } catch (err) {
         console.error("Error:", err);
