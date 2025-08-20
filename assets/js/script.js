@@ -68,6 +68,12 @@ function setCardImages(weatherId) {
 
 }
 
+//get day of the week for cards
+function getDayOfWeek(dateString) {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-GB', { weekday: 'long' });
+}
+
 // Geocoding API Call
 /** Returns the lat and lon of a city */
 export async function getLatLon() {
@@ -308,12 +314,14 @@ document.addEventListener("DOMContentLoaded", function () {
             let dailyWeather = await dailyForecast();
             dailyWeather.forEach((day) => {
                 const cardImage = setCardImages(day.weatherId);
+                const dayOfWeek = getDayOfWeek(day.date);
                 const formattedDate = day.date.split("-").reverse().join("-");
                 forecastContainer.innerHTML += `
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
             <div class="card-body">
-              <h3>${formattedDate}</h3>
+              <h3>${dayOfWeek}</h3>
+              <h4>${formattedDate}<h4>
               <p>${day.description}</p>
               <p>${day.temp}°</p>
             </div>
