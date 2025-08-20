@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function () {
             todaysWeatherContainer.innerHTML = `
         <div class="card hero">
           <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-          <div class="card-body text-center">
+          <div class="card-body">
             <p>Description: ${daily[0].description}</p>
             <p>Temperature: ${daily[0].temp}°</p>
           </div>
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 forecastContainer.innerHTML += `
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-            <div class="card-body text-center">
+            <div class="card-body">
               <h5>${time}</h5>
               <p>${hour.description}</p>
               <p>${hour.temp}°</p>
@@ -264,7 +264,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 forecastContainer.innerHTML += `
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-            <div class="card-body text-center">
+            <div class="card-body">
               <h5>${formattedDate}</h5>
               <p>${day.description}</p>
               <p>${day.temp}°</p>

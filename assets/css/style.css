@@ -62,26 +62,29 @@
 
 /* Cards */
 
-.card.hero {
+/* .card.hero {
     max-width: 350px;
     max-height: 350px;
-    border: 2px solid #050d35;
-}
+} */
 
-.card .card-img-top {
-    max-height: 250px;
+/* .card .card-img-top {
+    max-height: 350px;
     max-width: 100%;
-}
+} */
 
-.card.hero .card-img-top {
+/* .card.hero .card-img-top {
     max-width: 350px;
     max-height: 350px;
-}
+} */
 
 .card-body p {
     text-transform: capitalize;
 }
 .card {
+    max-width: 350px;
+    margin: 10px;
     border: 2px solid #050d35;
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    /* margin-bottom: 5px;
+    margin-top: 10px; */
 }
