@@ -1,6 +1,8 @@
 const locate = document.getElementById("geolocate");
-let resetButton = document.getElementById("reset")
-let empty = null
+const locationInput = document.getElementById("locationInput");
+const searchButton = document.getElementById("searchButton");
+const resetButton = document.getElementById("reset");
+let empty = null;
 
 import { navigateMap } from "./map.js";
 
@@ -18,11 +20,11 @@ import {} from "./script.js"
         .then(data => {
             const address = data.address;
             const place = address.village || address.town || address.city || address.hamlet || address.county || "Unknown";
-            document.getElementById("locationInput").placeholder = place + ", GB";
-            document.getElementById("locationInput").value = place + ", GB"
-            document.getElementById("searchButton").click()
-            document.getElementById("locationInput").disabled = true;
-            document.getElementById("searchButton").disabled = true;      
+            locationInput.placeholder = place + ", GB";
+            locationInput.value = place + ", GB";
+            searchButton.click();
+            locationInput.disabled = true;
+            searchButton.disabled = true;
             resetButton.classList.remove("inv");
         })
            
@@ -39,9 +41,9 @@ import {} from "./script.js"
 
   //  reset button functionality
 
-reset.addEventListener("click", () => {
-      document.getElementById("locationInput").disabled = false;
-      document.getElementById("searchButton").disabled = false;
-      document.getElementById("locationInput").value = empty
+resetButton.addEventListener("click", () => {
+      locationInput.disabled = false;
+      searchButton.disabled = false;
+      locationInput.value = empty;
       resetButton.classList.add("inv");
 })
