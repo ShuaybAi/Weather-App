@@ -212,17 +212,15 @@ document.addEventListener("DOMContentLoaded", function () {
             let daily = await dailyForecast();
 
             let todaysWeatherContainer = document.querySelector("#weatherCardContainer");
-            let cardImage = setCardImages(daily[0].weatherId);
+            const cardImage = setCardImages(daily[0].weatherId);
             todaysWeatherContainer.innerHTML = `
-      <div>
         <div class="card hero">
           <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-          <div class="card-body">
+          <div class="card-body text-center">
             <p>Description: ${daily[0].description}</p>
             <p>Temperature: ${daily[0].temp}°</p>
           </div>
-        </div>
-      </div>`;
+        </div>`;
 
             showForecast();
         }
@@ -235,12 +233,13 @@ document.addEventListener("DOMContentLoaded", function () {
         if (forecastType === "hourly") {
             let hourlyWeather = await hourlyForecast();
             hourlyWeather.forEach((hour) => {
-                let cardImage = setCardImages(hour.weatherId)
+                const cardImage = setCardImages(hour.weatherId)
+                const time = hour.time.split(":").slice(0,2).join(":");
                 forecastContainer.innerHTML += `
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-            <div class="card-body">
-              <h5>${hour.time}</h5>
+            <div class="card-body text-center">
+              <h5>${time}</h5>
               <p>${hour.description}</p>
               <p>${hour.temp}°</p>
             </div>
@@ -249,12 +248,13 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
             let dailyWeather = await dailyForecast();
             dailyWeather.forEach((day) => {
-                let cardImage = setCardImages(day.weatherId)
+                const cardImage = setCardImages(day.weatherId);
+                const formattedDate = day.date.split("-").reverse().join("-");
                 forecastContainer.innerHTML += `
           <div class="card">
             <img class="card-img-top" src="${cardImage}" alt="Weather icon">
-            <div class="card-body">
-              <h5>${day.date}</h5>
+            <div class="card-body text-center">
+              <h5>${formattedDate}</h5>
               <p>${day.description}</p>
               <p>${day.temp}°</p>
             </div>
