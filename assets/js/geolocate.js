@@ -1,4 +1,6 @@
 const locate = document.getElementById("geolocate");
+let resetButton = document.getElementById("reset")
+let empty = null
 
 import { navigateMap } from "./map.js";
 
@@ -21,7 +23,7 @@ import {} from "./script.js"
             document.getElementById("searchButton").click()
             document.getElementById("locationInput").disabled = true;
             document.getElementById("searchButton").disabled = true;      
-
+            resetButton.classList.remove("inv");
         })
            
       },
@@ -34,3 +36,12 @@ import {} from "./script.js"
     }
   });
 
+
+  //  reset button functionality
+
+reset.addEventListener("click", () => {
+      document.getElementById("locationInput").disabled = false;
+      document.getElementById("searchButton").disabled = false;
+      document.getElementById("locationInput").value = empty
+      resetButton.classList.add("inv");
+})

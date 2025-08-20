@@ -1,8 +1,21 @@
+// API Key
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
+
+// background function
+
+import { setBackground } from "./background.js";
+
+// map config
+import { map } from "./map.js";
+
+let currentMarker = null
+
+
 
 // will need get these from site (input from search bar)
 let cityName = "London";
 let countryCode = "GB";
+
 
 // this will change based on which button (hourly/daily) is pressed
 let forecastType = "hourly";
@@ -88,6 +101,21 @@ export async function getWeather(lat, lon) {
             throw new Error("API failed");
         }
         const data = await response.json();
+        map.flyTo({
+          center: [lon,lat],
+          zoom: 15,
+          speed: 1,
+          curve: 1.2,
+          pitch:74,
+          bearing:12.8,
+          hash:true
+        })
+        if (currentMarker){
+            currentMarker.remove()
+          }
+          currentMarker = new mapboxgl.Marker()
+            .setLngLat ([lon, lat])
+            .addTo(map)
         return data;
     } catch (err) {
         console.error("Error:", err);
@@ -177,6 +205,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
+    //default to previous search location, or london on site load
+    const locationInput = document.getElementById("locationInput");
+    const savedLocation = localStorage.getItem("savedInput");
+    if (savedLocation) {
+        locationInput.value = savedLocation;
+    } else {
+        locationInput.value = "London, GB";
+    }
+    showWeather();
+
     //search with dropdown
     const searchInput = document.getElementById("locationInput");
     const dropdown = document.createElement("ul");
@@ -213,6 +251,7 @@ document.addEventListener("DOMContentLoaded", function () {
     async function showWeather() {
         const locationInput = document.getElementById("locationInput");
         const location = locationInput.value;
+        localStorage.setItem("savedInput", location);
         if (location) {
             const [city, country] = location
                 .split(",")
@@ -224,6 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let todaysWeatherContainer = document.querySelector("#weatherCardContainer");
             const cardImage = setCardImages(daily[0].weatherId);
+            setBackground(daily[0].weatherId)
             todaysWeatherContainer.innerHTML = `
         <div class="card hero">
           <img class="card-img-top" src="${cardImage}" alt="Weather icon">
@@ -233,10 +273,18 @@ document.addEventListener("DOMContentLoaded", function () {
           </div>
         </div>`;
 
-            showForecast();
-        }
-    }
+          // add todays weather as a card on the map
+            let todaymap = document.getElementById("tempCard")
+            if (todaymap) {
+              todaymap.classList.remove("inv")
+              todaymap.innerHTML = ""; 
+              let p = document.createElement("p");
+              p.innerText = `${daily[0].temp}°C`;
+              todaymap.appendChild(p);
 
+              showForecast();
+            }
+          }}
     async function showForecast() {
         let forecastContainer = document.querySelector("#forecastCardsContainer");
         forecastContainer.innerHTML = "";
@@ -285,3 +333,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+// Scroll to top button functionality
+
+const btnScrollToTop = document.querySelector('#btnScrollToTop');
+
+btnScrollToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  })
+}
+)
