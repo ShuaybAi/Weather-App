@@ -212,6 +212,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const locationInput = document.getElementById("locationInput");
         const location = locationInput.value;
         if (location) {
+            const [city, country] = location
+                .split(",")
+                .map((part) => part.trim());
+            cityName = city;
+            countryCode = country;
             locationSelected = true;
             let daily = await dailyForecast();
 
