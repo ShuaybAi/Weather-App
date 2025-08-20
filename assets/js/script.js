@@ -273,6 +273,14 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         }
     }
+
+    searchInput.addEventListener("keydown", function(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            showWeather();
+        }
+    })
+
 });
 
 
