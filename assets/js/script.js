@@ -1,12 +1,21 @@
+// API Key
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
+// background function
+
+import { setBackground } from "./background.js";
+
+// map config
 import { map } from "./map.js";
 
 let currentMarker = null
 
+
+
 // will need get these from site (input from search bar)
 let cityName = "London";
 let countryCode = "GB";
+
 
 // this will change based on which button (hourly/daily) is pressed
 let forecastType = "hourly";
@@ -254,6 +263,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             let todaysWeatherContainer = document.querySelector("#weatherCardContainer");
             const cardImage = setCardImages(daily[0].weatherId);
+            setBackground(daily[0].weatherId)
             todaysWeatherContainer.innerHTML = `
         <div class="card hero">
           <img class="card-img-top" src="${cardImage}" alt="Weather icon">
