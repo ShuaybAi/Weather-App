@@ -89,6 +89,9 @@ h2 {
     border: 1px solid grey;
 }
 
+.btn-xl {
+    font-size: 1.25rem;
+}
 /* temp card */
 #tempCard {
     text-align: center;
