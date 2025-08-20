@@ -13,6 +13,10 @@
     background-color: aquamarine;
 }
 
+.background-sun {
+    background-color: yellow;
+}
+
 #header {
     background: var(--bg-color);
     color: var(--text-color);
