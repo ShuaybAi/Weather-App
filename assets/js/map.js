@@ -22,22 +22,6 @@ export const map = new mapboxgl.Map({
 map.addControl(new mapboxgl.NavigationControl());
 
 
-document.addEventListener("DOMContentLoaded", function () {
-async function showLatLon() {
-  const coords = await getLatLon();
-  
-  map.flyTo({
-          center: [coords[1], coords[0]],
-          zoom: 12,
-          speed: 3,
-          curve: 1.2,
-        });
-
-}
-
-showLatLon();
-})
-
 map.on("style.load", () => {
     map.setFog({});
 
