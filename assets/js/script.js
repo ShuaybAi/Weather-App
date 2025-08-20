@@ -10,6 +10,10 @@ let currentMarker = null
 let cityName = "London";
 let countryCode = "GB";
 
+// Capture body for background updates
+
+let background = document.getElementsByName("body")
+
 // this will change based on which button (hourly/daily) is pressed
 let forecastType = "hourly";
 

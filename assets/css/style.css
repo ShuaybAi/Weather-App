@@ -9,6 +9,10 @@
     /* --highlight-color-light: #7a9fc2; */
 }
 
+.background-rain {
+    background-color: aquamarine;
+}
+
 #header {
     background: var(--bg-color);
     color: var(--text-color);
