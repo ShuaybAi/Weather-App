@@ -41,6 +41,10 @@ position: relative;
     z-index: 10;
 }
 
+h2 {
+    font-weight: bold;
+}
+
 /* Search Bar */
 
 .input-container {
@@ -91,6 +95,9 @@ position: relative;
     border: 1px solid grey;
 }
 
+.btn-xl {
+    font-size: 1.25rem;
+}
 /* temp card */
 #tempCard {
     position: relative;
@@ -105,6 +112,8 @@ position: relative;
     font-size: 7rem;
 }
 
+/* Weather cards */
+
 .card-body p {
     text-transform: capitalize;
 }
@@ -113,6 +122,8 @@ position: relative;
     margin: 10px;
     border: 2px solid #050d35;
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    padding: 0px;
+    font-weight: normal;
 }
 
 /* Scroll to top button */
