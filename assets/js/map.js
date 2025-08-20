@@ -1,7 +1,7 @@
 
 const toggle = document.getElementById("toggle");
 const layerId = "weatherLayer"
-let currentMarker = null;
+export let currentMarker = null;
 
 import { getLatLon } from "./script.js";
 import { apiKey } from "./script.js";
@@ -9,7 +9,7 @@ import { apiKey } from "./script.js";
 mapboxgl.accessToken =
 "pk.eyJ1IjoiYWVzb20iLCJhIjoiY21lZzEzdHM4MHVzdjJqc2Y4cGtrMzJseSJ9.7j6FIpAePZGj6gOidJ35Hw";
 
-const map = new mapboxgl.Map({
+export const map = new mapboxgl.Map({
   container: "map",
   style: "mapbox://styles/mapbox/standard", 
   projection: "globe", 
