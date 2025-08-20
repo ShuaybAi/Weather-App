@@ -31,12 +31,12 @@ position: relative;
 }
 
 #map {
-    height: 50vh;
+    height: 60vh;
 }
 
 #toggle {
     position: relative;
-    bottom: 14.2rem;
+    bottom: 17.4vh;
     left: 0.3rem;
     z-index: 10;
 }
@@ -103,7 +103,7 @@ h2 {
     position: relative;
     width: fit-content;
     height: fit-content;
-    top:-50vh;
+    top:-60vh;
     box-shadow: 0 4px 16px rgba(0,0,0,0.25);
     backdrop-filter: blur(6px);
 }
