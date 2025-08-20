@@ -323,3 +323,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+
+// Scroll to top button functionality
+
+const btnScrollToTop = document.querySelector('#btnScrollToTop');
+
+btnScrollToTop.addEventListener("click", function () {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth"
+  })
+}
+)
