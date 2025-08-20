@@ -1,5 +1,7 @@
+// API Key
 export const apiKey = "a9ff67e576a8ebd062fbf714c9f65157";
 
+// map config
 import { map } from "./map.js";
 
 let currentMarker = null
