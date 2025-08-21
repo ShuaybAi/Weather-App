@@ -63,6 +63,32 @@ Balsamiq Wireframes were used to plan the layout of the site.
 
 ## Design
 
+From a design perspective, our main goal was to relay information the end-user visually.
+
+To achieve this we included the following features:
+
+- Interactive map
+- Cards displaying weather information
+- Dynamic background
+
+### Interactive Map
+The interactive map acts as a hero section, immediately drawing the attention of the end-user.
+
+This design approach allowed us to focus on functionality as a primary, due to the amount of content to which the user is presented.
+
+### Weather Cards
+On the map itself we have included a current temperature reading. This allows the end-user to quickly glance & gain useful insights re there entered location. 
+
+Scrolling further down the page reveals further weather information, this time in the form of cards.
+
+The cards display images and weather data dependent on weather conditions & user location.
+
+### Dynamic Background
+
+We decided that the websites theme/background should change dependant on weather conditions.
+
+To achieve this we applied different classes to the body based on data retrieved from the API.
+
 ### Colour Scheme
 
 
