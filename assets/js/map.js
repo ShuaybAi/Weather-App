@@ -53,22 +53,3 @@ toggle.addEventListener("click", () => {
 		weatherLayerVisible ? 1 : 0
 	);
 });
-
-// use geo-location for map
-export function navigateMap(geoLat, geoLon) {
-	map.flyTo({
-		center: [geoLon, geoLat],
-		zoom: 15,
-		speed: 1,
-		curve: 1.2,
-		pitch: 74,
-		bearing: 12.8,
-		hash: true,
-	});
-	if (currentMarker) {
-		currentMarker.remove();
-	}
-	currentMarker = new mapboxgl.Marker()
-		.setLngLat([geoLon, geoLat])
-		.addTo(map);
-}

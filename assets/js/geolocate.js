@@ -4,9 +4,7 @@ const searchButton = document.getElementById("searchButton");
 const resetButton = document.getElementById("reset");
 let empty = null;
 
-import { navigateMap } from "./map.js";
-
-import {} from "./script.js"
+// import { navigateMap } from "./map.js";
 
   locate.addEventListener("click", () => {
     if ("geolocation" in navigator) {
@@ -14,7 +12,7 @@ import {} from "./script.js"
         (position) => {
           const geoLat = position.coords.latitude;
           const geoLon = position.coords.longitude;
-          navigateMap(geoLat, geoLon);
+          // navigateMap(geoLat, geoLon);
           fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${geoLat}&lon=${geoLon}`)
           .then(response => response.json())
         .then(data => {
