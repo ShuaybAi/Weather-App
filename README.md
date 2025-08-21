@@ -71,7 +71,20 @@ Balsamiq Wireframes were used to plan the layout of the site.
 
 ## Website Features
 
+### API Error Message
 
+If the APIs are not responding, a message is displayed to the user. 
+This prevents frustration as they have feedback as to what the problem is rather than just encountering a non-working site. 
+
+<!-- Pic here -->
+
+### Location Set on Site Load
+
+When the user first enters the site, the weather is displayed for the location of their last search. This means the user doesn't have to repeatedly search for the location they are interested in as it is displayed immediately. 
+
+If the user has not searched anything previously, the location is set to London (as we are U.K based). This prevents the user from ever being presented an site without weather displayed. 
+
+<!-- pic here -->
 
 
 ## Future Features
