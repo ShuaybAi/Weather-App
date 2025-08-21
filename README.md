@@ -160,7 +160,6 @@ It also increases the accuracy of the search - although the search function will
 
 ![Dropdown](documentation/dropdown.png)
 
-<<<<<<< HEAD
 ### Weather Cards
 
 The site features bootstrap cards that display the current weather and forecast for the next 5 days. The cards are designed to be visually appealing and easy to read, with clear icons and text. Each card has an image that displays a different image based on the weather conditions. The content of the cards are aquired through the OpenWeatherMap API. The cards are dynamically generated with javascript and updated based on user input and location.
@@ -173,10 +172,9 @@ The content of the card includes the description and temperature.
 
 The forecast section displays the weather forecast depending on which button the user clicks (hourly or daily).
 ![Forecast Weather Section](documentation/forecast-weather-section.png)
-=======
+
 ### Scroll to Top Button
 Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
->>>>>>> main
 
 ## Future Features
 
