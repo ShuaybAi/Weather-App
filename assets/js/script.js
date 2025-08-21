@@ -21,6 +21,7 @@ const hourlyButton = document.getElementById("hourlyButton");
 const dailyButton = document.getElementById("dailyButton");
 const locationInput = document.getElementById("locationInput");
 const searchButton = document.getElementById("searchButton");
+const forecastSection = document.getElementById("forecast");
 const forecastContainer = document.getElementById("forecastCardsContainer");
 const todaysWeatherContainer = document.getElementById("weatherCardContainer");
 const tempCard = document.getElementById("tempCard");
@@ -174,7 +175,7 @@ function getWeeklyWeather(data) {
 	return weeklyArray;
 }
 
-//main
+// Main
 
 // Passes the lat and lon from getLatLon to getWeather, then the data from that to getHourlyWeather/weeklyWeather. Logs the results for now.
 async function hourlyForecast() {
@@ -193,20 +194,25 @@ async function dailyForecast() {
 	return dailyWeather;
 }
 
-//Event Listeners
+// Event Listeners
 
 document.addEventListener("DOMContentLoaded", function () {
-	hourlyButton.addEventListener("click", function () {
+
+	hourlyButton.addEventListener("click", async function () {
 		forecastType = "hourly";
-		showForecast();
+		await showForecast();
+		// go to forecast section
+		forecastSection.scrollIntoView({ alignToTop: false, behavior: "smooth" });
 	});
 
-	dailyButton.addEventListener("click", function () {
+	dailyButton.addEventListener("click", async function () {
 		forecastType = "daily";
-		showForecast();
+		await showForecast();
+		// go to forecast section
+		forecastSection.scrollIntoView({ alignToTop: false, behavior: "smooth" });
 	});
 
-	//default to previous search location, or london on site load
+	// Default to previous search location, or London on site load
 	const savedLocation = localStorage.getItem("savedInput");
 	if (savedLocation) {
 		locationInput.value = savedLocation;
@@ -223,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Focus the input field on page load
     locationInput.focus();
 
-	//search with dropdown
+	// Search with dropdown
 	const dropdown = document.createElement("ul");
 	dropdown.className = "suggestions";
 	locationInput.parentNode.appendChild(dropdown);
