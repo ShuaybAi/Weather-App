@@ -35,9 +35,9 @@
 }
 
 #toggle {
-    position: relative;
-    bottom: 17.4vh;
-    left: 0.3rem;
+    position: absolute;
+    bottom: 1vh;
+    left: 20px;
     z-index: 10;
 }
 
@@ -101,10 +101,10 @@ h2 {
 
 /* temp card */
 #tempCard {
-    position: relative;
+    position: absolute;
     width: fit-content;
     height: fit-content;
-    top: -60vh;
+    top: 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6px);
 }
