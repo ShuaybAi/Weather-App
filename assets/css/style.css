@@ -4,13 +4,61 @@
     --text-color: #ffc107;
 }
 
-.background-rain {
-    background-color: aquamarine;
+body {
+  --from: #c8cdd4;
+  --to:   #8a929e;
+  --fg:   #111316;
+  background: linear-gradient(180deg, var(--from), var(--to));
+  color: var(--fg);
+  transition: background 600ms ease, color 200ms ease;
+  min-height: 100dvh;
+}
+@media (prefers-reduced-motion: reduce) {
+  body { transition: none; }
 }
 
+/* Sunny */
 .background-sun {
-    background-color: yellow;
+  --from: #ffd166;
+  --to:   #ff9e2c;
+  --fg:   #1b150e;
 }
+
+/* Cloudy / Overcast */
+.background-cloudy {
+  --from: #c8cdd4;
+  --to:   #7d8590;
+  --fg:   #111316;
+}
+
+/* Rainy */
+.background-rain {
+  --from: #4a5d73;
+  --to:   #2f4858;
+  --fg:   #e8eef5;
+}
+
+/* Storm / Thunder */
+.background-storm {
+  --from: #2c1f4a;
+  --to:   #0f0f1b;
+  --fg:   #f0eaff;
+}
+
+/* Snowy */
+.background-snow {
+  --from: #e8f5ff;
+  --to:   #a9d6ff;
+  --fg:   #0b1a2b;
+}
+
+/* Fog / Mist */
+.background-fog {
+  --from: #d5d7dc;
+  --to:   #a9afb8;
+  --fg:   #1a1d21;
+}
+
 
 #header {
     background: var(--bg-color);

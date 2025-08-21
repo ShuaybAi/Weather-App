@@ -49,7 +49,7 @@ export function setBackground(weatherId) {
   } else {
     switch (firstNum) {
       case "2": //thunderstorm
-        background.classList.add("background-rain");
+        background.classList.add("background-storm");
         map.setRain({
           density: 0.6, // How many drops, 0–1
           intensity: 0.85, // Speed of rainfall, 0–1
@@ -95,7 +95,7 @@ export function setBackground(weatherId) {
 
         break;
       case "6": //snow
-        background.classList.add("background-rain");
+        background.classList.add("background-snow");
         map.setSnow({
           density: 0.8,
           intensity: 0.9,
@@ -109,7 +109,7 @@ export function setBackground(weatherId) {
         });
         break;
       case "7": //foggy/mist
-        background.classList.add("background-rain");
+        background.classList.add("background-fog");
         map.setFog({
           range: [0.5, 8], 
           color: "#dbe9f4", 
@@ -120,7 +120,7 @@ export function setBackground(weatherId) {
         });
         break;
       case "9": //extreme
-        background.classList.add("background-rain");
+        background.classList.add("background-storm");
         map.setRain({
           density: 1.0, 
           intensity: 1.0, 
