@@ -4,6 +4,8 @@ export let currentMarker = null;
 
 import { apiKey } from "./script.js";
 
+import {clearRain} from "./background.js"
+
 mapboxgl.accessToken =
 	"pk.eyJ1IjoiYWVzb20iLCJhIjoiY21lZzEzdHM4MHVzdjJqc2Y4cGtrMzJseSJ9.7j6FIpAePZGj6gOidJ35Hw";
 
@@ -19,9 +21,10 @@ export const map = new mapboxgl.Map({
 
 map.addControl(new mapboxgl.NavigationControl());
 
+// clear weather on map
 map.on("style.load", () => {
-	map.setFog({});
-
+	map.setConfigProperty ('basemap', 'lightPreset', 'dawn')
+	clearRain()
 	map.addSource("weatherLayer", {
 		type: "raster",
 		tiles: [
