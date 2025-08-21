@@ -11,7 +11,7 @@ mapboxgl.accessToken =
 
 export const map = new mapboxgl.Map({
 	container: "map",
-	style: "mapbox://styles/mapbox/standard",
+	style: "mapbox://styles/mapbox/standard-satellite",
 	projection: "globe",
 	zoom: 1.2,
 	center: [30, 15],
@@ -33,6 +33,23 @@ map.on("style.load", () => {
 		tileSize: 256,
 		attribution: "Weather © OpenWeather",
 	});
+	map.addLayer({
+  id: 'sky',
+  type: 'sky',
+  paint: {
+    'sky-type': 'atmosphere',
+    'sky-atmosphere-sun': [0.0, 90.0],  // azimuth, altitude
+    'sky-atmosphere-sun-intensity': 20
+  }
+});
+map.addSource('mapbox-dem', {
+  type: 'raster-dem',
+  url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
+  tileSize: 512,
+  maxzoom: 14
+});
+map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
+
 });
 
 let weatherLayerVisible = false;
