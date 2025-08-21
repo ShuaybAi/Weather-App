@@ -60,7 +60,7 @@ body {
 }
 
 
-#header {
+#header, #footer {
     background: var(--header-bg, rgba(255,255,255,0.55));
   color: var(--header-fg, #111316);
   backdrop-filter: blur(10px);
@@ -76,11 +76,6 @@ body {
   padding: 0.75rem 1rem;
 }
 
-#footer {
-    background: var(--bg-color);
-    color: var(--text-color);
-    padding: 1.5rem;
-}
 
 .map-container {
     position: relative;
@@ -90,7 +85,7 @@ body {
 
 #map {
     height: 60vh;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 
 }
 
