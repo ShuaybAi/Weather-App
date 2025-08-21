@@ -177,12 +177,11 @@ function getWeeklyWeather(data) {
 
 // Main
 
-// Passes the lat and lon from getLatLon to getWeather, then the data from that to getHourlyWeather/weeklyWeather. Logs the results for now.
+// Passes the lat and lon from getLatLon to getWeather, then the data from that to getHourlyWeather/weeklyWeather.
 async function hourlyForecast() {
 	const [lat, lon] = await getLatLon();
 	const weatherData = await getWeather(lat, lon);
 	const hourlyWeather = getHourlyWeather(weatherData);
-	console.log(hourlyWeather);
 	return hourlyWeather;
 }
 
@@ -190,7 +189,6 @@ async function dailyForecast() {
 	const [lat, lon] = await getLatLon();
 	const weatherData = await getWeather(lat, lon);
 	const dailyWeather = getWeeklyWeather(weatherData);
-	console.log(dailyWeather);
 	return dailyWeather;
 }
 
