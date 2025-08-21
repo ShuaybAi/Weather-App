@@ -76,7 +76,7 @@ Balsamiq Wireframes were used to plan the layout of the site.
 If the APIs are not responding, a message is displayed to the user. 
 This prevents frustration as they have feedback as to what the problem is rather than just encountering a non-working site. 
 
-<!-- Pic here -->
+![API Error Message](documentation/APIWarning.png)
 
 ### Location Set on Site Load
 
@@ -84,7 +84,17 @@ When the user first enters the site, the weather is displayed for the location o
 
 If the user has not searched anything previously, the location is set to London (as we are U.K based). This prevents the user from ever being presented an site without weather displayed. 
 
-<!-- pic here -->
+![Previous Search](documentation/default-location.png)
+
+![London Default](documentation/deafult-london.png)
+
+### Dropdown for Search Bar
+
+The search bar has a dropdown that appears when the user starts typing in the search box. This shows the avaliable cities and their country codes, so the user can click to select the right one. This saves them from typing out the whole phrase.
+
+It also increases the accuracy of the search - although the search function will work if you type only a city name, the API might not return the right result (e.g. it returns London, GB when you wanted London, CA). The dropdown allows the user to get the correct information without having to know or type in the country codes. This makes the process quicker and reduces frustration. 
+
+![Dropdown](documentation/dropdown.png)
 
 
 ## Future Features
