@@ -6,6 +6,7 @@
 
 ## Introduction
 
+Weather-App is a responsive website that delivers weather updates for any city worldwide. Users can search for locations, use their own geolocation, and view weather conditions visually on an interactive map. The site features dynamic backgrounds, weather cards, and search bar with dropdown suggestions.
 
 
 ## Responsivity
@@ -149,11 +150,14 @@ It also increases the accuracy of the search - although the search function will
 
 ## Future Features
 
-<!-- navigate dropdown with keyboard -->
-<!-- dropdown specificity?? -->
-<!-- custom error message for invalid input -->
-<!-- remove first forecast card -->
+Implement the ability to navigate/select from the dropdown using keyboard as well as mouse.
 
+Add a custom error message for invalid input to the search bar. At the moment if the user types in an invalid input, the error messages that displays is the same one as for an unreposponsive API ("We cannot fetch the weather"). This may cause confusion so we would like to add a custom error message e.g. "Please input a valid city name".
+
+Increase dropdown specificity. Currently, the dropdown displays city names that are closest to the typed input (e.g., "Brista, HR" for "brist"), but not always the intended city (such as "Bristol, GB"). We aim to increase the number of items shown in the dropdown so that the desired city appears even when fewer letters are entered.
+
+Remove the first card from the forecast. Currently the first card in the forecast section is the same as the one in Today's Weather. This may cause confusion, so we aim to remove this card and only display the future weather.
+ 
 ## Technologies Used
 
 This site was coded with HTML, CSS, and JavaScript.
