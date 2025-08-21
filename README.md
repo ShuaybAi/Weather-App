@@ -131,9 +131,23 @@ Additionally, the search function becomes locked & placeholder text is inserted 
 Finally, if the user wants to search for a place via text instead, a reset button appears once *Use my Location* has been clicked.  
 
 ### Interactive Map
+As a one of the primary features of the site, the map adds both contexualised information as well as user interaction. 
 
+Upon either searching for a location or using the geo-location feature, the map will automatically *fly* to the given location, place a pin & display simplified weather data in the form of current temperature:
 
+![map](documentation/map.png)
 
+Another feature of the map is the ability to overlay animations dependent on weather conditions.
+
+For example, if it is currently raining in the user's given location, a rain animation will be overlayed:
+
+![map-rain](documentation/map-rain.png)
+
+Finally in the bottom right of the map is a custom layer.
+
+This layer displays a current heat-map which presents pleasent visual feedback:
+
+![map-heat](documentation/map-heat.png)
 
 ### API Error Message
 
