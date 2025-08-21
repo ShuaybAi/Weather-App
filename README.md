@@ -97,7 +97,7 @@ To achieve this we applied different classes to the body based on data retrieved
 
 ### Colour Scheme
 
-![Colour-Scheme](documentation\Colour-Scheme.png)
+![Colour-Scheme](documentation/Colour-Scheme.png)
 
 Instead of one colour for the background, we decided to gather a few different colours that would coincide with current temperature readings.
 
@@ -109,7 +109,7 @@ Then we created a JS switch statement to decide which class(bg-colour) to use in
 
 We decided to choose a font similar to that of a newspaper:
 
-![Font-family](documentation\font-family.png)
+![Font-family](documentation/font-family.png)
 
 The purpose of this was to create an environment that indicates to the user, *this site provides information*
 
