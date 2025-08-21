@@ -42,12 +42,22 @@ There seems to be a slight issue with the forecast cards on mobile devices below
 
 
 ### Strategy
-
+Our strategy was to create a weather application that is intuitive, visually engaging, and accessible to users worldwide. We focused on delivering accurate weather information with interactive features such as map integration and dynamic backgrounds. 
 
 ### Scope
 
+The scope of this project included:
+
+- Providing real-time weather updates for any city globally.
+- Allowing users to search for locations or use their current geolocation.
+- Displaying weather information visually through cards, interactive map and  colour and image changes based on weather conditions.
+- Ensuring the site is responsive and accessible.
+
+Initially, we had thought to add a feature where users could see the weather from any past date (e.g. their birthday or important days in history). However, we discovered that the API that provided this infomation was only avaliable on a paid plan, so we pivoted to focus on the visual elements of the site e.g. the map.
 
 ### Structure
+
+The structure of the site is simple as it is a one-page website. It includes a search bar at the top, an interactive map under which weather cards are displayed, and buttons to select hourly and daily weather reports.
 
 
 ### Skeleton
