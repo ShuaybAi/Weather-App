@@ -1,27 +1,5 @@
 # Weather-App
 
-
-## Live Site
-
-
-## Introduction
-
-Weather-App is a responsive website that delivers weather updates for any city worldwide. Users can search for locations, use their own geolocation, and view weather conditions visually on an interactive map. The site features dynamic backgrounds, weather cards, and search bar with dropdown suggestions.
-
-
-## Responsivity
-
-The site was fully responsive for mobile, tablet, and desktop.
-
-
-
-### Mobile/Tablet View
-
-
-
-### Desktop View
-
-
 ## Contents
 
 - [Live Site](#live-site)
@@ -40,7 +18,28 @@ The site was fully responsive for mobile, tablet, and desktop.
   - [Lighthouse](#lighthouse)
 - [Credits](#credits)
 
+## Live Site
+
+
+## Introduction
+
+Weather-App is a responsive website that delivers weather updates for any city worldwide. Users can search for locations, use their own geolocation, and view weather conditions visually on an interactive map. The site features dynamic backgrounds, weather cards, and search bar with dropdown suggestions.
+
+## Responsivity
+
+The site was fully responsive for mobile, tablet, and desktop. Screenshots of https://ui.dev/amiresponsive running our website shown below.
+
+The map shown at startup resizes dynamically to fit the screen.
+![site shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-start.png)
+
+The cards in the forecast section resize dynamically to fit the screen, with 1 card showing on mobile devices, 3 cards showing on tablet devices, and 4 cards showing on desktop devices and larger. (our website seems to break the hosting site for some reason as it seems to overflow the device, this is an issue with https://ui.dev/amiresponsive rather than ours)
+![forecast cards shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-cards.png)
+
+There seems to be a slight issue with the forecast cards on mobile devices below 700px, as the right of the card starts to align with the right edge of the screen even though there should be a margin.
+![forecast cards shown on phone screen](documentation/forecast-cards-phone.png)
+
 ## User Experience
+
 
 ### Strategy
 
@@ -51,10 +50,9 @@ The site was fully responsive for mobile, tablet, and desktop.
 ### Structure
 
 
-
-
 ### Skeleton
 
+Balsamiq Wireframes were used to plan the layout of the site.
 
 ![Wireframes](documentation/Weather-app-wireframe.png)
 
@@ -162,6 +160,19 @@ It also increases the accuracy of the search - although the search function will
 
 ![Dropdown](documentation/dropdown.png)
 
+### Weather Cards
+
+The site features bootstrap cards that display the current weather and forecast for the next 5 days. The cards are designed to be visually appealing and easy to read, with clear icons and text. Each card has an image that displays a different image based on the weather conditions. The content of the cards are aquired through the OpenWeatherMap API. The cards are dynamically generated with javascript and updated based on user input and location.
+
+There are 2 sections for the weather cards: the current weather section and the forecast section.
+
+The current weather section displays the weather for the location specified by the user on that day.
+The content of the card includes the description and temperature.
+![Current Weather Section](documentation/todays-weather.png)
+
+The forecast section displays the weather forecast depending on which button the user clicks (hourly or daily).
+![Forecast Weather Section](documentation/forecast-weather-section.png)
+
 ### Scroll to Top Button
 Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
 
@@ -197,7 +208,6 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[Sqoosh]( https://squoosh.app/)**  was used to compress images for the web.
 
-
 **[Microsoft Copilot](https://copilot.microsoft.com/)** was used for image generation and debugging (see AI use section).
 
 **[Chrome DevTools](https://developer.chrome.com/docs/devtools)** were used for debugging and testing.
@@ -215,9 +225,7 @@ This site was coded with HTML, CSS, and JavaScript.
 #### Code Generation
 
 
-
 #### Debugging
-
 
 
 ## Deployment
