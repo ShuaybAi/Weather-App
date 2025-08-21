@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			const cardImage = setCardImages(daily[0].weatherId);
 			setBackground(daily[0].weatherId);
 			todaysWeatherContainer.innerHTML = `
-                <div class="card hero">
+                <div class="card">
                 <img class="card-img-top" src="${cardImage}" alt="Weather icon">
                 <div class="card-body">
                     <p>Description: ${daily[0].description}</p>
