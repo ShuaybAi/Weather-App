@@ -204,6 +204,8 @@ Dynamic scroll to top button using JavaScript lets users jump back to the top of
 
 Implement the ability to navigate/select from the dropdown using keyboard as well as mouse.
 
+Implement a feature to change the weather card images for night time hours.
+
 Add a custom error message for invalid input to the search bar. At the moment if the user types in an invalid input, the error messages that displays is the same one as for an unreposponsive API ("We cannot fetch the weather"). This may cause confusion so we would like to add a custom error message e.g. "Please input a valid city name".
 
 Increase dropdown specificity. Currently, the dropdown displays city names that are closest to the typed input (e.g., "Brista, HR" for "brist"), but not always the intended city (such as "Bristol, GB"). We aim to increase the number of items shown in the dropdown so that the desired city appears even when fewer letters are entered.
@@ -242,14 +244,21 @@ This site was coded with HTML, CSS, and JavaScript.
 
 ### AI Use
 
-
 #### Image Generation
 
+The images for the weather cards were generated using Copilot including images for sun, drizzle, rain, snow, clouds, and extreme weather.
 
 #### Code Generation
 
+Copilot was used to generate a function for returning the days of the week from a numerical date string. 
 
 #### Debugging
+
+AI was used throughout for debugging.
+
+Copilot was used to troubleshoot when the site was not storing the last saved search correctly in local storage. It pointed out that localStorage.setItem() was not being called in the right place, and made suggestions for how to correct this.
+
+
 
 
 ## Deployment
