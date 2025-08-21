@@ -296,6 +296,18 @@ Background colour: changes to match the weather conditions as expected.
 
 Map: Toggle heat map works, buttons to the side work as expected (zoom and tilt). Map navigates to the location you search for, or your location when you select choose my location.
 
+### Acessibility 
+
+The site can be tabbed through in a logical order.
+
+Keyboard naviagtion: Avaliable for search and buttons. Not implemented in dropdown (see future features).
+
+Screen Readers: Headings are in a logical order. Aria-labels present for input , scroll button, and cards. Buttons labelled clearly.
+
+
+
+
+
 ### Lighthouse
 
 #### Performance 
