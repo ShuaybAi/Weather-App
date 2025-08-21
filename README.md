@@ -63,13 +63,61 @@ Balsamiq Wireframes were used to plan the layout of the site.
 
 ## Design
 
+From a design perspective, our main goal was to relay information the end-user visually.
+
+To achieve this we included the following features:
+
+- Interactive map
+- Cards displaying weather information
+- Dynamic background
+
+### Interactive Map
+The interactive map acts as a hero section, immediately drawing the attention of the end-user.
+
+This design approach allowed us to focus on functionality as a primary, due to the amount of content to which the user is presented.
+
+### Weather Cards
+On the map itself we have included a current temperature reading. This allows the end-user to quickly glance & gain useful insights re there entered location. 
+
+Scrolling further down the page reveals further weather information, this time in the form of cards.
+
+The cards display images and weather data dependent on weather conditions & user location.
+
+### Dynamic Background
+
+We decided that the websites theme/background should change dependant on weather conditions.
+
+To achieve this we applied different classes to the body based on data retrieved from the API.
+
+### Wireframe
+
+![Wireframes](documentation\Weather-app-wireframe.png)
+
+As can be observed above, we had a framework for how we wanted to present the site & its key features.
+
+Although simplistic, the added time allowed us to focus on UX by means of features & interactivity.
+
+
 ### Colour Scheme
 
+![Colour-Scheme](documentation\Colour-Scheme.png)
+
+Instead of one colour for the background, we decided to gather a few different colours that would coincide with current temperature readings.
+
+To achieve this, we asked AI to generate appropriate colours (with a fade transition).
+
+Then we created a JS switch statement to decide which class(bg-colour) to use in relation to the current weather.
 
 ### Fonts
 
 
 ## Website Features
+
+Scroll to Top Button
+Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
+
+### Scroll to Top Button
+Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
 
 ### API Error Message
 
@@ -165,11 +213,15 @@ Github Pages then provides a link to the deployed site.
 #### HTML
 
 [W3 HTML Validator](https://validator.w3.org/) 
+<img width="1723" height="657" alt="HTML test score" src="https://github.com/user-attachments/assets/cbc07673-c480-45d9-ac79-33ed93f69af7" />
+
 
 
 #### CSS
 
 [W3 CSS Validator](https://validator.w3.org/) 
+<img width="1445" height="273" alt="CSS test score" src="https://github.com/user-attachments/assets/f7985287-1525-4ae7-8985-c20bb3a5479d" />
+
 
 ### Manual Testing
 
