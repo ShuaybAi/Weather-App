@@ -230,6 +230,10 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[OpenWeatherAPI - Geocoding](https://openweathermap.org/api/geocoding-api)** was used to retrieve co-ordinates for locations.
 
+**[OpenStreetMapAPI](https://www.openstreetmap.org/)** was used to convert coordinates to plain text.
+
+**[MapboxAPI](https://www.mapbox.com/)** was used to display the map.
+
 **[WebAIM](https://webaim.org/resources/contrastchecker/)** was used to check the colour contrast for accessibility.
 
 **[Sqoosh]( https://squoosh.app/)**  was used to compress images for the web.
@@ -250,15 +254,64 @@ The images for the weather cards were generated using Copilot including images f
 
 #### Code Generation
 
-Copilot was used to generate a function for returning the days of the week from a numerical date string. 
+One way in which AI assisted us on this project was in code generation, specifically the background styles.
+
+Initial Idea
+I wanted my weather app to change its background depending on the current conditions. I asked the AI for help deciding on appropriate colour schemes.
+
+Prompt: “I’m trying to make a weather app that changes background colour depending on the weather – can you help me decide the colours?”
+
+Response: The AI suggested a palette for different conditions (sunny, cloudy, rainy, storm, snow, fog, hot, cold), with gradients instead of flat colours.
+
+CSS Implementation
+Next, I asked for actual CSS to implement these backgrounds with smooth transitions.
+
+Prompt: “Can you provide the CSS for this? I’m thinking fades for each?”
+
+Response: The AI generated a full CSS setup using data-weather attributes, gradients, variables for text colour, and transition effects.
+
+![AI code generation](documentation/AIstyle.png)...
 
 #### Debugging
 
-AI was used throughout for debugging.
+While integrating Mapbox’s new rain effect (map.setRain()), I ran into a recurring error:
 
-Copilot was used to troubleshoot when the site was not storing the last saved search correctly in local storage. It pointed out that localStorage.setItem() was not being called in the right place, and made suggestions for how to correct this.
+*Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'setRain')*
+
+This happened whenever I tried to clear or reset the rain effect. I used an AI assistant to help isolate the cause and propose fixes. Here’s what came out of that process:
+
+Problem Identified
+
+The map object was undefined in the context where I called setRain.
+
+In my code, clearRain() was running inside a different script (e.g. background.js) than the one where the map instance was actually created.
+
+Because of that separation, my functions were trying to call map.setRain() on nothing.
+
+Key Fixes
+
+1. Pass the map object explicitly
+Instead of relying on a global variable, I updated helper functions to accept map as a parameter.
+
+2. Only call after the style is ready
+The rain effect can only be applied once the map’s style has loaded. To handle this safely.
+
+3. Avoid crossing execution contexts
+If running in a browser extension, I learned the background.js file does not share the same scope as the webpage. The fix was to either:
+Keep all map.setRain() calls in the page or content script, or
+Use message passing between background and content scripts to trigger rain updates.
+
+Lessons Learned
+
+Treat map as a local resource: don’t assume it’s globally available everywhere.
+
+Always guard method calls (if (map && map.setRain)).
+
+For extensions: background scripts can’t manipulate the DOM or page JS directly—use content scripts instead.
 
 
+
+Copilot was also used to troubleshoot when the site was not storing the last saved search correctly in local storage. It pointed out that localStorage.setItem() was not being called in the right place, and made suggestions for how to correct this.
 
 
 ## Deployment
