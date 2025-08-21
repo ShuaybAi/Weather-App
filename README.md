@@ -136,11 +136,15 @@ This site was deployed using Github Pages.
 #### HTML
 
 [W3 HTML Validator](https://validator.w3.org/) 
+<img width="1723" height="657" alt="HTML test score" src="https://github.com/user-attachments/assets/cbc07673-c480-45d9-ac79-33ed93f69af7" />
+
 
 
 #### CSS
 
 [W3 CSS Validator](https://validator.w3.org/) 
+<img width="1445" height="273" alt="CSS test score" src="https://github.com/user-attachments/assets/f7985287-1525-4ae7-8985-c20bb3a5479d" />
+
 
 ### Manual Testing
 
