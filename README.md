@@ -115,11 +115,26 @@ The purpose of this was to create an environment that indicates to the user, *th
 
 ## Website Features
 
-Scroll to Top Button
-Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
+### Geo-location
 
-### Scroll to Top Button
-Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
+within the project scope phase, we deceided to include to means of aqcuiring the users information.
+
+Namely, via a search text field & a geo-location button:
+
+![Geo-location](documentation/Geo-locate.png)
+
+Upon clicking this button, the user is prompted by their respective search engine whether to enable current location.
+
+If accepted, the location on the map is updated & weather information is presented in the form of cards.
+
+Additionally, the search function becomes locked & placeholder text is inserted into the search box to give an indication of where geo-locate has located them.
+
+Finally, if the user wants to search for a place via text instead, a reset button appears once *Use my Location* has been clicked.  
+
+### Interactive Map
+
+
+
 
 ### API Error Message
 
@@ -146,6 +161,8 @@ It also increases the accuracy of the search - although the search function will
 
 ![Dropdown](documentation/dropdown.png)
 
+### Scroll to Top Button
+Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
 
 ## Future Features
 
