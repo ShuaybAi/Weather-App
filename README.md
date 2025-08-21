@@ -56,7 +56,7 @@ The site was fully responsive for mobile, tablet, and desktop.
 ### Skeleton
 
 
-![Wireframes](documentation\Weather-app-wireframe.png)
+![Wireframes](documentation/Weather-app-wireframe.png)
 
 As can be observed above, we had a framework for how we wanted to present the site & its key features.
 
