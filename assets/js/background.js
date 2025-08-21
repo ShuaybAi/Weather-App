@@ -28,7 +28,7 @@ export function clearRain() {
       range: [0.5, 8],
       color: "#dbe9f4",
       "high-color": "#ffffff",
-      "space-color": "#0b1026", // <-- fills outside the globe
+      "space-color": "#0b1026", 
       "horizon-blend": 0.3,
       "star-intensity": 0,
     });
@@ -48,49 +48,49 @@ export function setBackground(weatherId) {
     clearRain();
   } else {
     switch (firstNum) {
-      case "2": //thunderstorm
+      case "2": //storm
         background.classList.add("background-storm");
         map.setRain({
-          density: 0.6, // How many drops, 0–1
-          intensity: 0.85, // Speed of rainfall, 0–1
-          dropletSize: [2.5, 16], // Range of raindrop sizes (min, max)
-          opacity: 0.75, // Transparency of the rain
-          color: "#a8adbc", // Soft bluish-grey rain color
-          direction: [0, 85], // Angle of rainfall [x, y]
-          distortionStrength: 0.6, // Warping effect as drops fall
-          vignette: 0.5, // Darken edges of the screen
+          density: 0.6, 
+          intensity: 0.85,
+          dropletSize: [2.5, 16], 
+          opacity: 0.75, 
+          color: "#a8adbc", 
+          direction: [0, 85], 
+          distortionStrength: 0.6, 
+          vignette: 0.5, 
           vignetteColor: "#222222",
-          centerThinning: 0.0, // Optional: make center less cluttered
+          centerThinning: 0.0, 
         });
         break;
       case "3": //drizzle
         background.classList.add("background-rain");
         map.setRain({
-          density: 0.6, // How many drops, 0–1
-          intensity: 0.85, // Speed of rainfall, 0–1
-          dropletSize: [2.5, 16], // Range of raindrop sizes (min, max)
-          opacity: 0.75, // Transparency of the rain
-          color: "#a8adbc", // Soft bluish-grey rain color
-          direction: [0, 85], // Angle of rainfall [x, y]
-          distortionStrength: 0.6, // Warping effect as drops fall
-          vignette: 0.5, // Darken edges of the screen
+          density: 0.6, 
+          intensity: 0.85, 
+          dropletSize: [2.5, 16], 
+          opacity: 0.75, 
+          color: "#a8adbc", 
+          direction: [0, 85], 
+          distortionStrength: 0.6, 
+          vignette: 0.5, 
           vignetteColor: "#222222",
-          centerThinning: 0.0, // Optional: make center less cluttered
+          centerThinning: 0.0, 
         });
         break;
       case "5": //rain
         background.classList.add("background-rain");
         map.setRain({
-          density: 0.6, // How many drops, 0–1
-          intensity: 0.85, // Speed of rainfall, 0–1
-          dropletSize: [2.5, 16], // Range of raindrop sizes (min, max)
-          opacity: 0.75, // Transparency of the rain
-          color: "#a8adbc", // Soft bluish-grey rain color
-          direction: [0, 85], // Angle of rainfall [x, y]
-          distortionStrength: 0.6, // Warping effect as drops fall
-          vignette: 0.5, // Darken edges of the screen
+          density: 0.6, 
+          intensity: 0.85, 
+          dropletSize: [2.5, 16],
+          opacity: 0.75, 
+          color: "#a8adbc", 
+          direction: [0, 85],
+          distortionStrength: 0.6, 
+          vignette: 0.5, 
           vignetteColor: "#222222",
-          centerThinning: 0.0, // Optional: make center less cluttered
+          centerThinning: 0.0, 
         });
 
         break;
