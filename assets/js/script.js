@@ -30,7 +30,7 @@ const btnScrollToTop = document.getElementById("btnScrollToTop");
 //Show warning if API not responding
 function apiWarning() {
 	const weatherCardDiv = document.querySelector("#weatherCardContainer");
-	weatherCardDiv.innerHTML = `<div class="card">
+	weatherCardDiv.innerHTML = `<div class="card" aria-label="API not responding card">
             <div class="card-body text-center">
               <h5>We're sorry, the weather cannot be fetched at the moment. Please try again later.</h5>
             </div>
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
             setBackground(daily[0].weatherId);
             
 			todaysWeatherContainer.innerHTML = `
-                <div class="card">
+                <div class="card" aria-label="weather card for location selected">
                 <img class="card-img-top" src="${cardImage}" alt="Weather icon">
                 <div class="card-body">
                     <p>Description: ${daily[0].description}</p>
@@ -304,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				const cardImage = setCardImages(hour.weatherId);
 				const time = hour.time.split(":").slice(0, 2).join(":");
 				forecastContainer.innerHTML += `
-                    <div class="card">
+                    <div class="card" aria-label="weather card for location selected">
                         <img class="card-img-top" src="${cardImage}" alt="Weather icon">
                         <div class="card-body">
                         <h3 class="h5">${time}</h3>
@@ -320,7 +320,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				const dayOfWeek = getDayOfWeek(day.date);
 				const formattedDate = day.date.split("-").reverse().join("-");
 				forecastContainer.innerHTML += `
-                    <div class="card">
+                    <div class="card" aria-label="weather card for location selected">
                         <img class="card-img-top" src="${cardImage}" alt="Weather icon">
                         <div class="card-body">
                         <h3 class="h5">${dayOfWeek}</h3>
