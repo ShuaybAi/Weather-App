@@ -100,6 +100,13 @@ Although simplistic, the added time allowed us to focus on UX by means of featur
 
 ### Colour Scheme
 
+![Colour-Scheme](documentation\Colour-Scheme.png)
+
+Instead of one colour for the background, we decided to gather a few different colours that would coincide with current temperature readings.
+
+To achieve this, we asked AI to generate appropriate colours (with a fade transition).
+
+Then we created a JS switch statement to decide which class(bg-colour) to use in relation to the current weather.
 
 ### Fonts
 
