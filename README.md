@@ -218,6 +218,10 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[OpenWeatherAPI - Geocoding](https://openweathermap.org/api/geocoding-api)** was used to retrieve co-ordinates for locations.
 
+**[OpenStreetMapAPI](https://www.openstreetmap.org/)** was used to convert coordinates to plain text.
+
+**[MapboxAPI](https://www.mapbox.com/)** was used to display the map.
+
 **[WebAIM](https://webaim.org/resources/contrastchecker/)** was used to check the colour contrast for accessibility.
 
 **[Sqoosh]( https://squoosh.app/)**  was used to compress images for the web.
