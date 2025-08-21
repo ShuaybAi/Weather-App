@@ -1,26 +1,5 @@
 # Weather-App
 
-
-## Live Site
-
-
-## Introduction
-
-
-
-## Responsivity
-
-The site was fully responsive for mobile, tablet, and desktop.
-
-
-
-### Mobile/Tablet View
-
-
-
-### Desktop View
-
-
 ## Contents
 
 - [Live Site](#live-site)
@@ -38,6 +17,30 @@ The site was fully responsive for mobile, tablet, and desktop.
   - [Manual Testing](#manual-testing)
   - [Lighthouse](#lighthouse)
 - [Credits](#credits)
+
+## Live Site
+
+
+## Introduction
+
+
+
+## Responsivity
+
+The site was fully responsive for mobile, tablet, and desktop.
+
+The map shown at startup resizes dynamically to fit the screen.
+![site shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-start.png)
+
+The cards in the forecast section resize dynamically to fit the screen, with 1 card showing on mobile devices, 3 cards showing on tablet devices, and 4 cards showing on desktop devices and larger.
+![forecast cards shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-cards.png)
+
+There seems to be a slight issue with the forecast cards on mobile devices below 700px, as the right of the card starts to align with the right edge of the screen even though there should be a margin.
+![forecast cards shown on phone screen](documentation/forecast-cards-phone.png)
+
+<!-- ### Mobile/Tablet View -->
+
+<!-- ### Desktop View -->
 
 ## User Experience
 
