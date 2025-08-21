@@ -99,7 +99,10 @@ It also increases the accuracy of the search - although the search function will
 
 ## Future Features
 
-
+<!-- navigate dropdown with keyboard -->
+<!-- dropdown specificity?? -->
+<!-- custom error message for invalid input -->
+<!-- remove first forecast card -->
 
 ## Technologies Used
 
@@ -150,6 +153,9 @@ This site was coded with HTML, CSS, and JavaScript.
 
 This site was deployed using Github Pages. 
 
+From the github repository, we navigated to the Pages area. Within this area, the "main" branch was chosen for deployment.
+
+Github Pages then provides a link to the deployed site.
 
 
 ## Testing 
@@ -167,7 +173,53 @@ This site was deployed using Github Pages.
 
 ### Manual Testing
 
+#### Responsivity & Browsers
 
+Site on mobile/tablet/desktop: 1 card was displayed on mobile, 3 on tablet, 4 on desktop as expected. Buttons work on all. Map scales to fit.
+
+Site viewed on Edge, Safari & Chrome: as expected.
+
+#### Search Functions 
+
+Selected multiple locations: weather displayed correctly for each.
+
+Pressed enter to search: search worked.
+
+Clicked on dropdown entry: Entry was input into seach bar. No way to use keyboard to navigate/select dropdown entries (see future features)
+
+Typed into search to trigger dropdown: dropdown was triggered but wasn't completely helpful until more letters are input e.g. typing "brist" does not bring up "Bristol, GB" but other cities worldwide (Brist HR, Brista HR). Bristol, GB was not seen until "bristol" was typed. However the dropdown is comprehensive and any city searched for was included.
+
+Invalid location input: Error message ("we cannot fetch the weather") was displayed. Although this does provide some feedback, it would be better to handle invalid input separately to API issues (see future features). 
+
+Search with internet off/API not responding: Error message displayed as expected.
+
+#### Default Location
+
+Previously searched: Shows weather and map for previously searched location as expected.
+
+Without local storage/no previous search: Displays weather and map for London as expected.
+
+#### Buttons
+
+Hourly & Daily buttons: Change the weather cards to the rest of the day, or rest of the week as expected. The first card displayed in the forecast is the same as today's weather, which may be confusing.
+
+Use My Location & Reset buttons: Displays map and weather for your location as expected. Sometimes innaccurate (close to location but not exact) due to ISP and API.
+
+#### Images and Background 
+
+Card images: change to match the weather descriptions as expected. 
+
+![Images match descriptions](documentation/card-images-weekly.png)
+
+Background colour: changes to match the weather conditions as expected.
+
+![Background Rain](documentation/background-rain.png)
+
+![Background Sun](documentation/background-sun.png)
+
+#### Map
+
+Map: Toggle heat map works, buttons to the side work as expected (zoom and tilt). Map navigates to the location you search for, or your location when you select choose my location.
 
 ### Lighthouse
 
