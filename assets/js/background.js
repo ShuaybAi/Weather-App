@@ -37,15 +37,15 @@ export function clearRain() {
 
 export function setBackground(weatherId) {
   const firstNum = weatherId.toString().split("")[0];
-
+  clearRain()
   background.classList.remove(...weatherClasses);
 
   if (weatherId === 800) {
-    clearRain();
+    
     background.classList.add("background-sun");
   } else if (weatherId > 800 && weatherId < 900) {
     background.classList.add("background-sun");
-    clearRain();
+    
   } else {
     switch (firstNum) {
       case "2": //storm
