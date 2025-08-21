@@ -115,6 +115,9 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[Bootstrap](https://getbootstrap.com/)** Framework (v5.3) was used for the grid structure and responsivity throughout the site. 
 
+**[OpenWeatherAPI](https://openweathermap.org/forecast5)** was used to retrieve the 5 day weather forecast.
+
+**[OpenWeatherAPI - Geocoding](https://openweathermap.org/api/geocoding-api)** was used to retrieve co-ordinates for locations.
 
 **[WebAIM](https://webaim.org/resources/contrastchecker/)** was used to check the colour contrast for accessibility.
 
