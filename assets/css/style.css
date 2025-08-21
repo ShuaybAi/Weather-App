@@ -9,7 +9,6 @@ body {
   --to:   #8a929e;
   --fg:   #111316;
   background: linear-gradient(180deg, var(--from), var(--to));
-  color: var(--fg);
   transition: background 600ms ease, color 200ms ease;
   min-height: 100dvh;
 }
@@ -91,7 +90,7 @@ body {
 
 #toggle {
     position: absolute;
-    bottom: 1vh;
+    bottom: 0.5vh;
     left: 20px;
     z-index: 10;
 }
