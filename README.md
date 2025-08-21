@@ -71,6 +71,9 @@ Balsamiq Wireframes were used to plan the layout of the site.
 
 ## Website Features
 
+Scroll to Top Button
+Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
+
 
 
 
