@@ -110,6 +110,11 @@ Then we created a JS switch statement to decide which class(bg-colour) to use in
 
 ### Fonts
 
+We decided to choose a font similar to that of a newspaper:
+
+![Font-family](documentation\font-family.png)
+
+The purpose of this was to create an environment that indicates to the user, *this site provides information*
 
 ## Website Features
 
