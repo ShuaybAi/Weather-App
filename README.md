@@ -54,8 +54,12 @@ The site was fully responsive for mobile, tablet, and desktop.
 
 ### Skeleton
 
-Balsamiq Wireframes were used to plan the layout of the site. 
 
+![Wireframes](documentation\Weather-app-wireframe.png)
+
+As can be observed above, we had a framework for how we wanted to present the site & its key features.
+
+Although simplistic, the added time allowed us to focus on UX by means of features & interactivity.
 
 
 ### Surface 
@@ -89,13 +93,6 @@ We decided that the websites theme/background should change dependant on weather
 
 To achieve this we applied different classes to the body based on data retrieved from the API.
 
-### Wireframe
-
-![Wireframes](documentation\Weather-app-wireframe.png)
-
-As can be observed above, we had a framework for how we wanted to present the site & its key features.
-
-Although simplistic, the added time allowed us to focus on UX by means of features & interactivity.
 
 
 ### Colour Scheme
