@@ -2,31 +2,29 @@
 
 ## Contents
 
-- [Live Site](#live-site)
-- [Introduction](#introduction)
-- [Responsivity](#responsivity)
-- [User Experience](#user-experience)
-- [Design](#design)
-- [Website Features](#website-features)
-- [Future Features](#future-features)
-- [Technologies Used](#technologies-used)
-  - [AI Use](#ai-use)
-- [Deployment](#deployment)
-- [Testing](#testing)
-  - [Validation](#validation)
-  - [Manual Testing](#manual-testing)
-  - [Lighthouse](#lighthouse)
-- [Credits](#credits)
+-   [Live Site](#live-site)
+-   [Introduction](#introduction)
+-   [Responsivity](#responsivity)
+-   [User Experience](#user-experience)
+-   [Design](#design)
+-   [Website Features](#website-features)
+-   [Future Features](#future-features)
+-   [Technologies Used](#technologies-used)
+    -   [AI Use](#ai-use)
+-   [Deployment](#deployment)
+-   [Testing](#testing)
+    -   [Validation](#validation)
+    -   [Manual Testing](#manual-testing)
+    -   [Lighthouse](#lighthouse)
+-   [Credits](#credits)
 
 ## Live Site
 
 https://petercones.github.io/Weather-App/
 
-
 ## Introduction
 
 Weather-App is a responsive website that delivers weather updates for any city worldwide. Users can search for locations, use their own geolocation, and view weather conditions visually on an interactive map. The site features dynamic backgrounds, weather cards, and search bar with dropdown suggestions.
-
 
 ## Responsivity
 
@@ -44,20 +42,20 @@ There seems to be a slight issue with the forecast cards on mobile devices below
 
 ![forecast cards shown on phone screen](documentation/forecast-cards-phone.png)
 
-
 ## User Experience
 
 ### Strategy
-Our strategy was to create a weather application that is intuitive, visually engaging, and accessible to users worldwide. We focused on delivering accurate weather information with interactive features such as map integration and dynamic backgrounds. 
+
+Our strategy was to create a weather application that is intuitive, visually engaging, and accessible to users worldwide. We focused on delivering accurate weather information with interactive features such as map integration and dynamic backgrounds.
 
 ### Scope
 
 The scope of this project included:
 
-- Providing real-time weather updates for any city globally.
-- Allowing users to search for locations or use their current geolocation.
-- Displaying weather information visually through cards, interactive map and  colour and image changes based on weather conditions.
-- Ensuring the site is responsive and accessible.
+-   Providing real-time weather updates for any city globally.
+-   Allowing users to search for locations or use their current geolocation.
+-   Displaying weather information visually through cards, interactive map and colour and image changes based on weather conditions.
+-   Ensuring the site is responsive and accessible.
 
 Initially, we had thought to add a feature where users could see the weather from any past date (e.g. their birthday or important days in history). However, we discovered that the API that provided this infomation was only avaliable on a paid plan, so we pivoted to focus on the visual elements of the site e.g. the map.
 
@@ -75,8 +73,7 @@ As can be observed above, we had a framework for how we wanted to present the si
 
 Although simplistic, the added time allowed us to focus on UX by means of features & interactivity.
 
-### Surface 
- 
+### Surface
 
 ## Design
 
@@ -84,17 +81,19 @@ From a design perspective, our main goal was to relay information the end-user v
 
 To achieve this we included the following features:
 
-- Interactive map
-- Cards displaying weather information
-- Dynamic background
+-   Interactive map
+-   Cards displaying weather information
+-   Dynamic background
 
 ### Interactive Map
+
 The interactive map acts as a hero section, immediately drawing the attention of the end-user.
 
 This design approach allowed us to focus on functionality as a primary, due to the amount of content to which the user is presented.
 
 ### Weather Cards
-On the map itself we have included a current temperature reading. This allows the end-user to quickly glance & gain useful insights re there entered location. 
+
+On the map itself we have included a current temperature reading. This allows the end-user to quickly glance & gain useful insights re there entered location.
 
 Scrolling further down the page reveals further weather information, this time in the form of cards.
 
@@ -122,8 +121,7 @@ We decided to choose a font similar to that of a newspaper:
 
 ![Font-family](documentation/font-family.png)
 
-The purpose of this was to create an environment that indicates to the user, *this site provides information*
-
+The purpose of this was to create an environment that indicates to the user, _this site provides information_
 
 ## Website Features
 
@@ -141,13 +139,13 @@ If accepted, the location on the map is updated & weather information is present
 
 Additionally, the search function becomes locked & placeholder text is inserted into the search box to give an indication of where geo-locate has located them.
 
-Finally, if the user wants to search for a place via text instead, a reset button appears once *Use my Location* has been clicked.  
+Finally, if the user wants to search for a place via text instead, a reset button appears once _Use my Location_ has been clicked.
 
 ### Interactive Map
 
-As a one of the primary features of the site, the map adds both contexualised information as well as user interaction. 
+As a one of the primary features of the site, the map adds both contexualised information as well as user interaction.
 
-Upon either searching for a location or using the geo-location feature, the map will automatically *fly* to the given location, place a pin & display simplified weather data in the form of current temperature:
+Upon either searching for a location or using the geo-location feature, the map will automatically _fly_ to the given location, place a pin & display simplified weather data in the form of current temperature:
 
 ![map](documentation/map.png)
 
@@ -165,16 +163,16 @@ This layer displays a current heat-map which presents pleasent visual feedback:
 
 ### API Error Message
 
-If the APIs are not responding, a message is displayed to the user. 
-This prevents frustration as they have feedback as to what the problem is rather than just encountering a non-working site. 
+If the APIs are not responding, a message is displayed to the user.
+This prevents frustration as they have feedback as to what the problem is rather than just encountering a non-working site.
 
 ![API Error Message](documentation/APIWarning.png)
 
 ### Location Set on Site Load
 
-When the user first enters the site, the weather is displayed for the location of their last search. This means the user doesn't have to repeatedly search for the location they are interested in as it is displayed immediately. 
+When the user first enters the site, the weather is displayed for the location of their last search. This means the user doesn't have to repeatedly search for the location they are interested in as it is displayed immediately.
 
-If the user has not searched anything previously, the location is set to London (as we are U.K based). This prevents the user from ever being presented an site without weather displayed. 
+If the user has not searched anything previously, the location is set to London (as we are U.K based). This prevents the user from ever being presented an site without weather displayed.
 
 ![Previous Search](documentation/default-location.png)
 
@@ -184,7 +182,7 @@ If the user has not searched anything previously, the location is set to London 
 
 The search bar has a dropdown that appears when the user starts typing in the search box. This shows the avaliable cities and their country codes, so the user can click to select the right one. This saves them from typing out the whole phrase.
 
-It also increases the accuracy of the search - although the search function will work if you type only a city name, the API might not return the right result (e.g. it returns London, GB when you wanted London, CA). The dropdown allows the user to get the correct information without having to know or type in the country codes. This makes the process quicker and reduces frustration. 
+It also increases the accuracy of the search - although the search function will work if you type only a city name, the API might not return the right result (e.g. it returns London, GB when you wanted London, CA). The dropdown allows the user to get the correct information without having to know or type in the country codes. This makes the process quicker and reduces frustration.
 
 ![Dropdown](documentation/dropdown.png)
 
@@ -209,12 +207,9 @@ For daily, the weather shows the next 5 days including today.
 
 ![Forecast Weather Section - daily](documentation/forecast-daily.png)
 
-
-
 ### Scroll to Top Button
 
 Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
-
 
 ## Future Features
 
@@ -230,12 +225,11 @@ Remove the first card from the forecast. Currently the first card in the forecas
 
 Not exactly a feature, but a wider range of images could be displayed in the cards, like for when it is just cloudy or when it is night time.
 
-
 ## Technologies Used
 
 This site was coded with HTML, CSS, and JavaScript.
 
-**Git** was used for version control. 
+**Git** was used for version control.
 
 **[Github](https://github.com/)** was used to save and store the files for the site.
 
@@ -243,7 +237,7 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[Github Issues Project Board](https://github.com/features/issues)** was used to track progress.
 
-**[Bootstrap](https://getbootstrap.com/)** Framework (v5.3) was used for the grid structure and responsivity throughout the site. 
+**[Bootstrap](https://getbootstrap.com/)** Framework (v5.3) was used for the grid structure and responsivity throughout the site.
 
 **[OpenWeatherAPI](https://openweathermap.org/forecast5)** was used to retrieve the 5 day weather forecast.
 
@@ -255,7 +249,7 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[WebAIM](https://webaim.org/resources/contrastchecker/)** was used to check the colour contrast for accessibility.
 
-**[Sqoosh]( https://squoosh.app/)**  was used to compress images for the web.
+**[Sqoosh](https://squoosh.app/)** was used to compress images for the web.
 
 **[Microsoft Copilot](https://copilot.microsoft.com/)** was used for image generation and debugging (see AI use section).
 
@@ -263,7 +257,7 @@ This site was coded with HTML, CSS, and JavaScript.
 
 **[W3 HTML Validator](https://validator.w3.org/)** was used for HTML validation.
 
-**[W3 CSS Validator](https://validator.w3.org/)** was used for CSS validation. 
+**[W3 CSS Validator](https://validator.w3.org/)** was used for CSS validation.
 
 ### AI Use
 
@@ -295,7 +289,7 @@ Response: The AI generated a full CSS setup using data-weather attributes, gradi
 
 While integrating Mapbox’s new rain effect (map.setRain()), I ran into a recurring error:
 
-*Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'setRain')*
+_Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'setRain')_
 
 This happened whenever I tried to clear or reset the rain effect. I used an AI assistant to help isolate the cause and propose fixes. Here’s what came out of that process:
 
@@ -310,15 +304,15 @@ Because of that separation, my functions were trying to call map.setRain() on no
 Key Fixes
 
 1. Pass the map object explicitly
-Instead of relying on a global variable, I updated helper functions to accept map as a parameter.
+   Instead of relying on a global variable, I updated helper functions to accept map as a parameter.
 
 2. Only call after the style is ready
-The rain effect can only be applied once the map’s style has loaded. To handle this safely.
+   The rain effect can only be applied once the map’s style has loaded. To handle this safely.
 
 3. Avoid crossing execution contexts
-If running in a browser extension, I learned the background.js file does not share the same scope as the webpage. The fix was to either:
-Keep all map.setRain() calls in the page or content script, or
-Use message passing between background and content scripts to trigger rain updates.
+   If running in a browser extension, I learned the background.js file does not share the same scope as the webpage. The fix was to either:
+   Keep all map.setRain() calls in the page or content script, or
+   Use message passing between background and content scripts to trigger rain updates.
 
 Lessons Learned
 
@@ -328,36 +322,29 @@ Always guard method calls (if (map && map.setRain)).
 
 For extensions: background scripts can’t manipulate the DOM or page JS directly—use content scripts instead.
 
-
-
 Copilot was also used to troubleshoot when the site was not storing the last saved search correctly in local storage. It pointed out that localStorage.setItem() was not being called in the right place, and made suggestions for how to correct this.
-
 
 ## Deployment
 
-This site was deployed using Github Pages. 
+This site was deployed using Github Pages.
 
 From the github repository, we navigated to the Pages area. Within this area, the "main" branch was chosen for deployment.
 
 Github Pages then provides a link to the deployed site.
 
-
-## Testing 
+## Testing
 
 ### Validation
 
 #### HTML
 
-[W3 HTML Validator](https://validator.w3.org/) 
+[W3 HTML Validator](https://validator.w3.org/)
 <img width="1723" height="657" alt="HTML test score" src="https://github.com/user-attachments/assets/cbc07673-c480-45d9-ac79-33ed93f69af7" />
-
-
 
 #### CSS
 
-[W3 CSS Validator](https://validator.w3.org/) 
+[W3 CSS Validator](https://validator.w3.org/)
 <img width="1445" height="273" alt="CSS test score" src="https://github.com/user-attachments/assets/f7985287-1525-4ae7-8985-c20bb3a5479d" />
-
 
 ### Manual Testing
 
@@ -367,7 +354,7 @@ Site on mobile/tablet/desktop: 1 card was displayed on mobile, 3 on tablet, 4 on
 
 Site viewed on Edge, Safari & Chrome: as expected.
 
-#### Search Functions 
+#### Search Functions
 
 Selected multiple locations: weather displayed correctly for each.
 
@@ -377,7 +364,7 @@ Clicked on dropdown entry: Entry was input into seach bar. No way to use keyboar
 
 Typed into search to trigger dropdown: dropdown was triggered but wasn't completely helpful until more letters are input e.g. typing "brist" does not bring up "Bristol, GB" but other cities worldwide (Brist HR, Brista HR). Bristol, GB was not seen until "bristol" was typed. However the dropdown is comprehensive and any city searched for was included.
 
-Invalid location input: Error message ("we cannot fetch the weather") was displayed. Although this does provide some feedback, it would be better to handle invalid input separately to API issues (see future features). 
+Invalid location input: Error message ("we cannot fetch the weather") was displayed. Although this does provide some feedback, it would be better to handle invalid input separately to API issues (see future features).
 
 Search with internet off/API not responding: Error message displayed as expected.
 
@@ -393,9 +380,9 @@ Hourly & Daily buttons: Change the weather cards to the rest of the day, or rest
 
 Use My Location & Reset buttons: Displays map and weather for your location as expected. Sometimes innaccurate (close to location but not exact) due to ISP and API.
 
-#### Images and Background 
+#### Images and Background
 
-Card images: change to match the weather descriptions as expected. 
+Card images: change to match the weather descriptions as expected.
 
 ![Images match descriptions](documentation/card-images-daily.png)
 
@@ -409,33 +396,28 @@ Background colour: changes to match the weather conditions as expected.
 
 Map: Toggle heat map works, buttons to the side work as expected (zoom and tilt). Map navigates to the location you search for, or your location when you select choose my location.
 
-### Acessibility 
+### Accessibility
 
 The site can be tabbed through in a logical order.
 
-Keyboard naviagtion: Avaliable for search and buttons. Not implemented in dropdown (see future features).
+Keyboard navigation: Available for search and buttons. Not implemented in dropdown (see future features).
 
-Screen Readers: Headings are in a logical order. Aria-labels present for input , scroll button, and cards. Buttons labelled clearly.
+Screen Readers: Headings are in a logical order. Aria-labels present for input, scroll button, and cards. Buttons labelled clearly.
 
+All colours pass the WCAG standards. There is just one colour combination that fails: the header with the rain background which has insufficient contrast.
 
-
-
+![colour contrast fail](documentation/contrast-fail.png)
 
 ### Lighthouse
 
-#### Performance 
+#### Performance
 
-### Best Practices
+![lighthouse results](documentation/lighthouse-performance.png)
 
-### SEO
-
+Most of the fall in the lighthouse performance scores can be attributed to the mapbox integration, which is quite resource-intensive.
 
 ## Credits
 
 [Copilot](https://copilot.microsoft.com/) - used for image generation (see AI use section)
 
 [Balsamiq](https://balsamiq.com/) - used to create wireframes.
-
-
-
-
