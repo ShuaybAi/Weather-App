@@ -5,8 +5,13 @@
 /* CSS Variables */
 :root {
     --bg-color: linear-gradient(to right, #050d35, #1a2a6c);
-    --text-color: #ffc107;
     --font-family: "Merriweather", serif;
+    --text-sunny:  #2b1a0e;  
+    --text-cloudy: #101216;  
+    --text-rainy:  #e8eef5;  
+    --text-storm:  #f0eaff;  
+    --text-snowy:  #0b1a2b;  
+    --text-fog:    #1a1d21;
 }
 
 body {
@@ -27,6 +32,7 @@ body {
   --from: #ffd166;
   --to:   #ff9e2c;
   --fg:   #1b150e;
+  color: var(--text-sunny)
 }
 
 /* Cloudy / Overcast */
@@ -34,6 +40,7 @@ body {
   --from: #c8cdd4;
   --to:   #7d8590;
   --fg:   #111316;
+  color: var(--text-cloudy);
 }
 
 /* Rainy */
@@ -41,6 +48,7 @@ body {
   --from: #4a5d73;
   --to:   #2f4858;
   --fg:   #e8eef5;
+  color: var(--text-rainy);
 }
 
 /* Storm / Thunder */
@@ -48,6 +56,7 @@ body {
   --from: #2c1f4a;
   --to:   #0f0f1b;
   --fg:   #f0eaff;
+  color: var(--text-storm);
 }
 
 /* Snowy */
@@ -55,6 +64,7 @@ body {
   --from: #e8f5ff;
   --to:   #a9d6ff;
   --fg:   #0b1a2b;
+  color: var(--text-snowy);
 }
 
 /* Fog / Mist */
@@ -62,23 +72,22 @@ body {
   --from: #d5d7dc;
   --to:   #a9afb8;
   --fg:   #1a1d21;
+  color: var(--text-fog);
 }
 
 
 #header, #footer {
     background: var(--header-bg, rgba(255,255,255,0.55));
-  color: var(--header-fg, #111316);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--header-border, rgba(0,0,0,0.08));
-  box-shadow: 0 6px 20px var(--header-shadow, rgba(0,0,0,0.08));
-
-  transition:
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--header-border, rgba(0,0,0,0.08));
+    box-shadow: 0 6px 20px var(--header-shadow, rgba(0,0,0,0.08));
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    transition:
     background 400ms ease,
     color 200ms ease,
     border-color 400ms ease,
     box-shadow 400ms ease;
-  padding: 0.75rem 1rem;
+    padding: 0.75rem 1rem;
 }
 
 
@@ -92,6 +101,10 @@ body {
     height: 60vh;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 
+}
+
+#tempCard p {
+    color: #2b1a0e ;
 }
 
 #toggle {
@@ -127,6 +140,7 @@ h2 {
     border: 1px solid black;
     margin: 0;
     padding: 8px 12px;
+    color:black
 }
 
 .suggestions li:hover {
@@ -163,7 +177,7 @@ h2 {
 #tempCard {
     position: absolute;
     width: fit-content;
-    height: fit-content;
+    height: 4rem;
     top: 0;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6px);
