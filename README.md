@@ -20,26 +20,32 @@
 
 ## Live Site
 
+https://petercones.github.io/Weather-App/
+
 
 ## Introduction
 
 Weather-App is a responsive website that delivers weather updates for any city worldwide. Users can search for locations, use their own geolocation, and view weather conditions visually on an interactive map. The site features dynamic backgrounds, weather cards, and search bar with dropdown suggestions.
+
 
 ## Responsivity
 
 The site was fully responsive for mobile, tablet, and desktop. Screenshots of https://ui.dev/amiresponsive running our website shown below.
 
 The map shown at startup resizes dynamically to fit the screen.
+
 ![site shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-start.png)
 
 The cards in the forecast section resize dynamically to fit the screen, with 1 card showing on mobile devices, 3 cards showing on tablet devices, and 4 cards showing on desktop devices and larger. (our website seems to break the hosting site for some reason as it seems to overflow the device, this is an issue with https://ui.dev/amiresponsive rather than ours)
+
 ![forecast cards shown on large monitor, laptop, tablet, phone screen](documentation/responsivity-cards.png)
 
 There seems to be a slight issue with the forecast cards on mobile devices below 700px, as the right of the card starts to align with the right edge of the screen even though there should be a margin.
+
 ![forecast cards shown on phone screen](documentation/forecast-cards-phone.png)
 
-## User Experience
 
+## User Experience
 
 ### Strategy
 Our strategy was to create a weather application that is intuitive, visually engaging, and accessible to users worldwide. We focused on delivering accurate weather information with interactive features such as map integration and dynamic backgrounds. 
@@ -59,7 +65,6 @@ Initially, we had thought to add a feature where users could see the weather fro
 
 The structure of the site is simple as it is a one-page website. It includes a search bar at the top, an interactive map under which weather cards are displayed, and buttons to select hourly and daily weather reports.
 
-
 ### Skeleton
 
 Balsamiq Wireframes were used to plan the layout of the site.
@@ -69,7 +74,6 @@ Balsamiq Wireframes were used to plan the layout of the site.
 As can be observed above, we had a framework for how we wanted to present the site & its key features.
 
 Although simplistic, the added time allowed us to focus on UX by means of features & interactivity.
-
 
 ### Surface 
  
@@ -102,8 +106,6 @@ We decided that the websites theme/background should change dependant on weather
 
 To achieve this we applied different classes to the body based on data retrieved from the API.
 
-
-
 ### Colour Scheme
 
 ![Colour-Scheme](documentation/Colour-Scheme.png)
@@ -121,6 +123,7 @@ We decided to choose a font similar to that of a newspaper:
 ![Font-family](documentation/font-family.png)
 
 The purpose of this was to create an environment that indicates to the user, *this site provides information*
+
 
 ## Website Features
 
@@ -141,6 +144,7 @@ Additionally, the search function becomes locked & placeholder text is inserted 
 Finally, if the user wants to search for a place via text instead, a reset button appears once *Use my Location* has been clicked.  
 
 ### Interactive Map
+
 As a one of the primary features of the site, the map adds both contexualised information as well as user interaction. 
 
 Upon either searching for a location or using the geo-location feature, the map will automatically *fly* to the given location, place a pin & display simplified weather data in the form of current temperature:
@@ -191,14 +195,26 @@ The site features bootstrap cards that display the current weather and forecast 
 There are 2 sections for the weather cards: the current weather section and the forecast section.
 
 The current weather section displays the weather for the location specified by the user on that day.
-The content of the card includes the description and temperature.
-![Current Weather Section](documentation/todays-weather.png)
+There are 2 buttons displayed: "Hourly" and "Daily", which allow the user to toggle between hourly and daily forecasts and jumps to the next section.
 
-The forecast section displays the weather forecast depending on which button the user clicks (hourly or daily).
-![Forecast Weather Section](documentation/forecast-weather-section.png)
+![Today's Weather Section](documentation/todays-weather.png)
+
+The forecast section displays the weather forecast depending on which button the user clicks (hourly or daily). For hourly, the weather shows every 3 hours starting from the next slot after the current time.
+
+![Forecast Weather Section - hourly](documentation/forecast-hourly-2-cards.png)
+
+![Forecast Weather Section - hourly (all)](documentation/forcast-cards-all-hours.png)
+
+For daily, the weather shows the next 5 days including today.
+
+![Forecast Weather Section - daily](documentation/forecast-daily.png)
+
+
 
 ### Scroll to Top Button
+
 Dynamic scroll to top button using JavaScript lets users jump back to the top of the page instantly, making browsing smooth and frustration free.
+
 
 ## Future Features
 
@@ -211,7 +227,10 @@ Add a custom error message for invalid input to the search bar. At the moment if
 Increase dropdown specificity. Currently, the dropdown displays city names that are closest to the typed input (e.g., "Brista, HR" for "brist"), but not always the intended city (such as "Bristol, GB"). We aim to increase the number of items shown in the dropdown so that the desired city appears even when fewer letters are entered.
 
 Remove the first card from the forecast. Currently the first card in the forecast section is the same as the one in Today's Weather. This may cause confusion, so we aim to remove this card and only display the future weather.
- 
+
+Not exactly a feature, but a wider range of images could be displayed in the cards, like for when it is just cloudy or when it is night time.
+
+
 ## Technologies Used
 
 This site was coded with HTML, CSS, and JavaScript.
@@ -378,7 +397,7 @@ Use My Location & Reset buttons: Displays map and weather for your location as e
 
 Card images: change to match the weather descriptions as expected. 
 
-![Images match descriptions](documentation/card-images-weekly.png)
+![Images match descriptions](documentation/card-images-daily.png)
 
 Background colour: changes to match the weather conditions as expected.
 
@@ -406,15 +425,7 @@ Screen Readers: Headings are in a logical order. Aria-labels present for input ,
 
 #### Performance 
 
-
-
-### Accessibility 
-
-
-
 ### Best Practices
-
-
 
 ### SEO
 
