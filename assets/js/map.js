@@ -7,7 +7,7 @@ import { apiKey } from "./script.js";
 import {clearRain} from "./background.js"
 
 mapboxgl.accessToken =
-	"pk.eyJ1IjoiYWVzb20iLCJhIjoiY21lZzEzdHM4MHVzdjJqc2Y4cGtrMzJseSJ9.7j6FIpAePZGj6gOidJ35Hw";
+	"pk.eyJ1IjoiYWVzb20iLCJhIjoiY21lcTVncHhxMXcybTJrc2RvOG51eHQxMCJ9.M13Fpnhm5ELExGJkytklVQ";
 
 export const map = new mapboxgl.Map({
 	container: "map",
